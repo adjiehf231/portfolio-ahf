@@ -375,7 +375,7 @@ tbody td {
         display: none;
         flex-direction: column;
         align-items: flex-start;
-        padding-left: 20px;
+        padding: 0;
     }
 
     .navigation.show {
@@ -409,17 +409,17 @@ tbody td {
     form {
         width: 90%;
         padding: 15px;
-        font-size: 18px;
+        font-size: 14px;
     }
 
     input[type="text"],
     input[type="number"],
     select {
-        font-size: 18px;
+        font-size: 14px;
     }
 
     label {
-        font-size: 18px;
+        font-size: 14px;
     }
 
     .btn-prediksi {
