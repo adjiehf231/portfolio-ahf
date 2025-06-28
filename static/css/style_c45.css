@@ -451,7 +451,7 @@ tbody td {
     .table-container-kfold {
         overflow-x: auto;
         width: 90%;
-        max-height: 1000px;
+        height: 1000px;
     }
 
     .table-container-kfold {
