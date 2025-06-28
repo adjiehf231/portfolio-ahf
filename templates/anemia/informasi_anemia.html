@@ -8,21 +8,21 @@
     <link rel="stylesheet" href="../../static/css/style_anemia.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <!-- Hamburger Menu -->
-        <button id="hamburger">&#9776;</button>
+<div class="container mt-5">
+    <!-- Hamburger Menu -->
+    <button id="hamburger">&#9776;</button>
 
-        <nav class="navigation">
-            <a href="../../index.html">🏠 Kembali Ke Portofolio</a>
-            <a href="index_anemia.html">🏠 Beranda</a>
-            <a href="prediksi_anemia.html">📊 Prediksi Anemia</a>
-            <a href="informasi_anemia.html">📊 Informasi Model</a>
-        </nav>
+    <nav class="navigation">
+        <a href="../../index.html">🏠 Kembali Ke Portofolio</a>
+        <a href="index_anemia.html">🏠 Beranda</a>
+        <a href="prediksi_anemia.html">📊 Prediksi Anemia</a>
+        <a href="informasi_anemia.html">📊 Informasi Model</a>
+    </nav>
 
-        <h1 class="text-center mt-4">📊 Informasi Analisis Data Model Logistic Regression</h1>
+    <h1 class="text-center mt-4">📊 Informasi Analisis Data Model Logistic Regression</h1>
 
-
-        <h2 class="mt-4">🔄 Transformasi Data</h2>
+    <h2 class="mt-4">🔄 Transformasi Data</h2>
+    <div class="table-responsive">
         <table class="table table-hover table-bordered text-center">
             <thead class="table-warning">
                 <tr>
@@ -52,13 +52,15 @@
                 </tr>
             </tbody>
         </table>
-        
-        <!-- Seleksi Fitur -->
-        <h1 class="mt-4">⚙️ K-Fold Cross Validation & Confusion Matrix</h1>
+    </div>
 
-        <!-- Hasil Evaluasi Model -->
-        <h2 class="mt-4">📈 Hasil K-Fold Cross Validation</h2>
+    <!-- Seleksi Fitur -->
+    <h1 class="mt-4">⚙️ K-Fold Cross Validation & Confusion Matrix</h1>
 
+    <!-- Hasil Evaluasi Model -->
+    <h2 class="mt-4">📈 Hasil K-Fold Cross Validation</h2>
+
+    <div class="table-responsive">
         <table class="table table-hover table-bordered text-center" id="kfold">
             <thead class="table-success">
                 <tr>
@@ -72,8 +74,10 @@
             <tbody>
             </tbody>
         </table>
+    </div>
 
-        <h2 class="mt-4">🏆 Best Model dari K-Fold</h2>
+    <h2 class="mt-4">🏆 Best Model dari K-Fold</h2>
+    <div class="table-responsive">
         <table class="table table-hover table-bordered text-center">
             <thead class="table-danger">
                 <tr>
@@ -94,14 +98,16 @@
                 </tr>
             </tbody>
         </table>
+    </div>
 
-        <!-- Confusion Matrix -->
-        <h2 class="mt-4">🎯 Confusion Matrix</h2>
-        <div class="mt-3">
-           <img class="confusion-matrix" src="../../static/img/anemia/cm_anemia.png" alt="Confusion Matrix">
-        </div>
+    <!-- Confusion Matrix -->
+    <h2 class="mt-4">🎯 Confusion Matrix</h2>
+    <div class="mt-3">
+        <img class="confusion-matrix" src="../../static/img/anemia/cm_anemia.png" alt="Confusion Matrix">
+    </div>
 
-        <h2 class="mt-4">📊 Agregasi K-Fold Cross Validation</h2>
+    <h2 class="mt-4">📊 Agregasi K-Fold Cross Validation</h2>
+    <div class="table-responsive">
         <table class="table table-hover table-bordered text-center">
             <thead class="table-info">
                 <tr>
@@ -120,8 +126,9 @@
                 </tr>
             </tbody>
         </table>
-        
     </div>
-    <script src="../../static/js/script_anemia.js"></script>
+
+</div>
+<script src="../../static/js/script_anemia.js"></script>
 </body>
 </html>
