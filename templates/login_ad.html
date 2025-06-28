@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Analisis Data</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #232526, #414345);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: #2c2f33;
+            padding: 40px 60px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.4);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #f5c518;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 40px);
+            padding: 10px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 8px;
+            background: #40444b;
+            color: white;
+            font-size: 14px;
+        }
+
+        .password-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .password-wrapper input {
+            width: 100%;
+        }
+
+        .password-wrapper button {
+            position: absolute;
+            right: 10px;
+            background: none;
+            border: none;
+            color: #ccc;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        a {
+            width: 100%;
+            margin-top: 25px;
+            padding: 10px 180px;
+            background-color: #f5c518;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #232526;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #e1b813;
+        }
+
+        .forto {
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin-top: 25px;
+            padding: 10px;
+            background-color: #f5c518;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #232526;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .forto {
+            background-color: #e1b813;
+        }
+        .flash {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .flash-success {
+            background-color: #2ecc71;
+            color: #fff;
+        }
+
+        .flash-error {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1><a href="../index.html" class="forto">🏠 Kembali Ke Portofolio</a></h1>
+        <h1>Selamat Datang Di Aplikasi Analisis</h1>
+        <h2>Silahkan Login</h2>
+
+
+        <form>
+            <label>Username:</label>
+            <input type="text" name="username" required>
+
+            <label>Password:</label>
+            <div class="password-wrapper">
+                <input type="password" name="password" id="password-field" required>
+                <button type="button" onclick="togglePassword()">👁️</button>
+            </div>
+
+            <a href="index_ad.html">Login</a>
+        </form>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const pwField = document.getElementById('password-field');
+            pwField.type = pwField.type === 'password' ? 'text' : 'password';
+        }
+    </script>
+</body>
+</html>

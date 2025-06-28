@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_ph.css') }}">
+    <title>Diagnosis Penyakit</title>
+    <style>
+        .gejala ul {
+            display: none;
+        .gejala li {
+                display: none;
+        }
+        }
+    </style>
+    
+    <div class="navigation">
+        <a href="/">🏠 Kembali Ke Portofolio</a>
+        <a href="/index_ph">Beranda</a>
+        <a href="/diagnosis_ph">Diagnosis Penyakit</a>
+        <a href="/data_ph">Basis Pengetahuan</a>
+    </div>
+</head>
+
+<body>
+    <h1>Diagnosis Penyakit Tumbuhan Hortikultura</h1>
+    <form method="post" action="/diagnosis_ph">
+        <label for="tanaman">Pilih Tanaman:</label>
+        <select name="tanaman" id="tanaman" onchange="showSymptoms()">
+            <option value="">Silahkan Pilih Tanaman</option>
+            <option value="cabai">Cabai</option>
+            <option value="kentang">Kentang</option>
+            <option value="wortel">Wortel</option>
+        </select>
+        <br>
+        <div id="gejala-container">
+            <label for="gejala">Pilih Gejala:</label><br>
+            <ul id="gejala-list" class="gejala">
+                {% for gejala_code, gejala_desc in gejala_data.items() %}
+                    <li><input type="checkbox" name="gejala" value="{{ gejala_code }}"> {{ gejala_desc }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <br>
+        <button type="submit">Diagnosis</button>
+    </form>
+
+    {% if result is defined %}
+
+        {% if result %}
+            <div class="diagnosis-result">
+                <h2>Tanaman: {{ result.tanaman.T01 }}</h2>
+                <h3>Gejala:</h3>
+                <ul class="gejala">
+                    {% for code, name in result.gejala.items() %}
+                        <li>{{ name }} - Kode: {{ code }}</li>
+                    {% endfor %}
+                </ul>
+                <h3>Penyakit:</h3>
+                <ul class="penyakit">
+                    {% for penyakit, nama in result.penyakit.items() %}
+                        <li>{{ nama }} - Kode: {{ penyakit }}</li>
+                    {% endfor %}
+                </ul>
+                <h3>Solusi:</h3>
+                <ul class="solusi">
+                    {% for penyakit, solusi in result.solusi.items() %}
+                        <li>{{ solusi }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% else %}
+                <div class="diagnosis-error">
+                    <p>Mohon Maaf Sistem Tidak Bisa Mendiagnosis Penyakit,</p>
+                    <P>Data Gejala Yang Anda Masukkan Tidak Sesuai Dengan Basis Pengetahuan</p>
+                </div>
+            {% endif %}
+
+    {% endif %}
+    <script>
+        function showSymptoms() {
+            var selectedTanaman = document.getElementById("tanaman").value;
+            var gejalaList = document.getElementById("gejala-list");
+    
+            // Reset the display for all symptoms
+            gejalaList.style.display = "none";
+            var gejalaItems = gejalaList.getElementsByTagName("li");
+            for (var i = 0; i < gejalaItems.length; i++) {
+                gejalaItems[i].style.display = "none";
+            }
+    
+            // Show symptoms based on the selected plant
+            if (selectedTanaman) {
+                var startCode, endCode;
+                if (selectedTanaman === "cabai") {
+                    startCode = "G01";
+                    endCode = "G15";
+                } else if (selectedTanaman === "kentang") {
+                    startCode = "G16";
+                    endCode = "G29";
+                } else if (selectedTanaman === "wortel") {
+                    startCode = "G30";
+                    endCode = "G43";
+                }
+    
+                // Display selected symptoms
+                for (var i = 0; i < gejalaItems.length; i++) {
+                    var gejalaCode = gejalaItems[i].getElementsByTagName("input")[0].value;
+                    if (gejalaCode >= startCode && gejalaCode <= endCode) {
+                        gejalaItems[i].style.display = "block";
+                    }
+                }
+    
+                // Show the symptoms list
+                gejalaList.style.display = "block";
+            }
+        }
+    </script>
+    
+    
+</body>
+
+</html>

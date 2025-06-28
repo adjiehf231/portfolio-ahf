@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Datang</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style_gizi.css">
+    <style>
+    body {
+        background: url('/static/img/gizi/background_gizi.jpg') no-repeat center center fixed;
+        background-size: cover;
+        font-family: 'Poppins', sans-serif;
+        color: #f8f9fa93;
+        margin: 0;
+        padding: 0;
+    }
+    overlay {
+        background: rgba(209, 203, 203, 0.6);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    </style>
+</head>
+<body>
+   <!-- Hamburger Menu Button -->
+    <div class="hamburger" id="hamburger">&#9776;</div>
+
+    <!-- Navigation Links -->
+    <nav class="navigation" id="navLinks">
+        <a href="../index.html">Kembali Ke Portofolio</a>
+        <a href="index_gizi.html">Beranda</a>
+        <a href="prediksi_gizi.html">Prediksi Status Gizi Balita</a>
+        <a href="informasi_gizi.html">Informasi Model Random Forest</a>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mt-5">Selamat Datang di Sistem Klasifikasi Status Gizi Balita</h1>
+        <p class="lead">Analisis data Gizi pada Balita menggunakan algoritma Random Forest.</p> 
+    </div>
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function () {
+    var nav = document.getElementById('navLinks');
+    nav.classList.toggle('show');
+});
+</script>
+</body>
+</html>

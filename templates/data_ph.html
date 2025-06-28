@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_ph.css') }}">
+    <title>Data Tanaman Hortikultura</title>
+</head>
+<body>
+    <div class="navigation">
+        <a href="/">🏠 Kembali Ke Portofolio</a>
+        <a href="/index_ph">Beranda</a>
+        <a href="/diagnosis_ph">Diagnosis Penyakit</a>
+        <a href="/data_ph">Basis Pengetahuan</a>
+    </div>
+
+    <h1>Data Gejala Rule Penyakit dan Solusi</h1>
+    <h2>Data Tanaman:</h2>
+    <ul class="tanaman">
+        {% for kode, nama in tanaman_data.items() %}
+            <li>{{ nama }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Data Gejala:</h2>
+    <ul class="gejala">
+        {% for kode, nama in gejala_data.items() %}
+            <li>{{ loop.index }}. {{ nama }} - Kode: {{ kode }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Data Penyakit:</h2>
+        <ul class="data_penyakit">
+            {% for tanaman, rules in rule_data.items() %}
+                <li>{{ tanaman }}</li>
+                <ul>
+                    {% for penyakit, gejala_codes in rules.items() %}
+                        <li>{{ penyakit }} - {{ penyakit_data[penyakit] }}</li>
+                        <ul>
+                            <li>Gejala: {% for gejala_code in gejala_codes %}{{ gejala_data[gejala_code] }}, {% endfor %}</li>
+                            <li>Solusi: {{ solusi_data[penyakit] }}</li>
+                        </ul>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </ul>
+
+</body>
+</html>

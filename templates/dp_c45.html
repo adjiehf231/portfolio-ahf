@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Prediksi Stunting</title>
+    <link rel="stylesheet" href="../static/css/style_c45.css">
+</head>
+<body>
+    <!-- Hamburger Menu Button -->
+    <div class="hamburger" id="hamburger">&#9776;</div>
+
+    <!-- Navigation Links -->
+    <div class="navigation" id="navLinks">
+        <a href="../index.html">Kembali Ke Portofolio</a>
+        <a href="index_c45.html">Beranda</a>
+        <a href="prediksi_c45.html">Prediksi Stunting</a>
+        <a href="informasi_c45.html">Informasi Model C45</a>
+        <a href="dp_c45.html">Data Prediksi</a>
+    </div>
+
+    <h1>Data Prediksi Stunting</h1>
+
+
+    <div class="table-container">
+        <table id="predictionTable">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Alamat</th>
+                    <th>Nama Orang Tua</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Usia (Bulan)</th>
+                    <th>Berat Badan (KG)</th>
+                    <th>Tinggi Badan (CM)</th>
+                    <th>Prediksi</th>
+                    <th>Select</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class="table-controls">
+        <button class="btn-download" id="downloadBtn">Download (Excel)</button>
+        <button class="btn-checkall" id="checkAllBtn">Check All</button>
+        <button class="btn-unchekall" id="uncheckAllBtn">Uncheck All</button>
+        <button class="btn-delete" id="deleteBtn">Delete</button>
+    </div>
+
+    <div class="footer">
+        <p>Designed by Adjie Hari Fajar</p>
+    </div>
+
+    <script>
+    document.getElementById('hamburger').addEventListener('click', function () {
+        var nav = document.getElementById('navLinks');
+        nav.classList.toggle('show');
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const tableBody = document.querySelector('#predictionTable tbody');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const checkAllBtn = document.getElementById('checkAllBtn');
+        const uncheckAllBtn = document.getElementById('uncheckAllBtn');
+        const deleteBtn = document.getElementById('deleteBtn');
+
+        // Path to your CSV file
+        const csvFilePath = '../static/data/data prediksi.csv'; // Adjust this path if your CSV is elsewhere
+        let predictionData = []; // To store the parsed CSV data
+
+        // --- Function to fetch and parse CSV ---
+        async function loadCSVData() {
+            try {
+                const response = await fetch(csvFilePath);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const csvText = await response.text();
+                predictionData = parseCSV(csvText);
+                renderTable(predictionData);
+            } catch (error) {
+                console.error("Error loading or parsing CSV:", error);
+                tableBody.innerHTML = '<tr><td colspan="10">Gagal memuat data. Pastikan file CSV tersedia.</td></tr>';
+            }
+        }
+
+        function parseCSV(csvString) {
+            const lines = csvString.trim().split('\n');
+            const headers = lines[0].split(',').map(header => header.trim()); // Trim headers
+            const data = [];
+
+            for (let i = 1; i < lines.length; i++) {
+                const values = lines[i].split(',').map(value => value.trim()); // Trim values
+                if (values.length === headers.length) {
+                    const row = {};
+                    headers.forEach((header, index) => {
+                        row[header] = values[index];
+                    });
+                    data.push(row);
+                } else {
+                    console.warn(`Skipping malformed row ${i + 1}: ${lines[i]}`);
+                }
+            }
+            return data;
+        }
+
+        // --- Function to render table ---
+        function renderTable(data) {
+            tableBody.innerHTML = ''; // Clear existing rows
+            if (data.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="10">Tidak ada data prediksi.</td></tr>';
+                return;
+            }
+
+            data.forEach((row, index) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${row.Nama || ''}</td>
+                    <td>${row.Alamat || ''}</td>
+                    <td>${row['Nama Orang Tua'] || ''}</td>
+                    <td>${row['Jenis Kelamin'] || ''}</td>
+                    <td>${row['Usia (Bulan)'] || ''}</td>
+                    <td>${row['Berat Badan (KG)'] || ''}</td>
+                    <td>${row['Tinggi Badan (CM)'] || ''}</td>
+                    <td>${row.Prediksi || ''}</td>
+                    <td><input type="checkbox" class="select-checkbox" data-index="${index}"></td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+
+        // --- Button Event Listeners ---
+
+        // Download to Excel
+        downloadBtn.addEventListener('click', function() {
+            const headerText = Array.from(document.querySelectorAll('#predictionTable thead th')).map(th => th.textContent);
+            const rows = Array.from(tableBody.querySelectorAll('tr'));
+
+            let csvContent = headerText.join(',') + '\n';
+
+            rows.forEach(row => {
+                const rowData = Array.from(row.querySelectorAll('td')).map(td => {
+                    // For the 'Select' column, we don't want the checkbox HTML
+                    const checkbox = td.querySelector('.select-checkbox');
+                    return checkbox ? '' : `"${td.textContent.replace(/"/g, '""')}"`; // Handle commas and quotes in data
+                }).filter((_, index) => index < headerText.length); // Ensure only relevant columns are taken
+
+                csvContent += rowData.join(',') + '\n';
+            });
+
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            if (link.download !== undefined) { // Feature detection
+                const url = URL.createObjectURL(blob);
+                link.setAttribute('href', url);
+                link.setAttribute('download', 'data_prediksi_stunting.csv');
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        });
+
+        // Check All
+        checkAllBtn.addEventListener('click', function() {
+            document.querySelectorAll('.select-checkbox').forEach(checkbox => {
+                checkbox.checked = true;
+            });
+        });
+
+        // Uncheck All
+        uncheckAllBtn.addEventListener('click', function() {
+            document.querySelectorAll('.select-checkbox').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+        });
+
+        // Delete Selected
+        deleteBtn.addEventListener('click', function() {
+            const checkedRows = Array.from(document.querySelectorAll('.select-checkbox:checked'));
+
+            if (checkedRows.length === 0) {
+                alert('Pilih data yang ingin dihapus terlebih dahulu!');
+                return;
+            }
+
+            if (confirm(`Apakah Anda yakin ingin menghapus ${checkedRows.length} data yang dipilih?`)) {
+                // Get the indices of items to delete, in descending order to avoid index shifting issues
+                const indicesToDelete = checkedRows.map(checkbox => parseInt(checkbox.dataset.index)).sort((a, b) => b - a);
+
+                indicesToDelete.forEach(index => {
+                    predictionData.splice(index, 1); // Remove from the data array
+                });
+
+                // Re-render the table with the updated data
+                renderTable(predictionData);
+
+                // Important: After deleting and re-rendering, you need to re-assign data-index
+                // This loop ensures correct indexing for new checkboxes if data is deleted in middle
+                document.querySelectorAll('.select-checkbox').forEach((checkbox, newIndex) => {
+                    checkbox.dataset.index = newIndex;
+                });
+                alert('Data berhasil dihapus!');
+            }
+        });
+
+        // Initial data load when the page loads
+        loadCSVData();
+    });
+    </script>
+</body>
+</html>

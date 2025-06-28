@@ -1,0 +1,28 @@
+<svg width="100%" height="100%" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bloodGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e53935"/>
+      <stop offset="100%" stop-color="#b71c1c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="250" cy="250" r="240" fill="#fce4ec" />
+
+  <!-- Blood Drop -->
+  <path d="M250 90 C230 140,180 200,180 260 C180 320,220 360,250 360 C280 360,320 320,320 260 C320 200,270 140,250 90 Z" fill="url(#bloodGradient)" stroke="#c62828" stroke-width="2"/>
+
+  <!-- Heart in Drop -->
+  <path d="M235 250 C235 235,250 225,250 240 C250 225,265 235,265 250 C265 265,250 270,250 275 C250 270,235 265,235 250 Z" fill="#fff" />
+
+  <!-- Arm/Needle -->
+  <rect x="80" y="220" width="100" height="30" rx="15" fill="#ef9a9a"/>
+  <line x1="180" y1="235" x2="250" y2="260" stroke="#c62828" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="180" cy="235" r="8" fill="#b71c1c" />
+
+  <!-- 2-Line Text -->
+  <text x="250" y="410" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" fill="#c62828">
+    <tspan x="250" dy="0">Donor Darahmu,</tspan>
+    <tspan x="250" dy="24">Selamatkan Dunia!</tspan>
+  </text>
+</svg>

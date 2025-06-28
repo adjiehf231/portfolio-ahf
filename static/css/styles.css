@@ -1,0 +1,931 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 3rem;
+  --font-semi: 600;
+  /*===== Colores =====*/
+  /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
+  /* HSL color mode */
+  --hue-color: 224;
+  --first-color: hsl(var(--hue-color), 89%, 60%);
+  --second-color: hsl(var(--hue-color), 56%, 12%);
+  /*===== Fuente y tipografia =====*/
+  --body-font: "Poppins", sans-serif;
+  --big-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: .938rem;
+  --smaller-font-size: .75rem;
+  /*===== Margenes =====*/
+  --mb-2: 1rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+  /*===== z index =====*/
+  --z-back: -10;
+  --z-fixed: 100;
+}
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h2-font-size: 2rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: .875rem;
+  }
+}
+
+/*===== BASE =====*/
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--second-color);
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*===== CLASS CSS ===== */
+.section-title {
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  margin-top: var(--mb-2);
+  margin-bottom: var(--mb-4);
+  text-align: center;
+}
+.section-title::after {
+  position: absolute;
+  content: "";
+  width: 64px;
+  height: 0.18rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+
+.section {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+/*===== LAYOUT =====*/
+.bd-grid {
+  max-width: 1024px;
+  display: grid;
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
+
+.l-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+}
+
+/*===== NAV =====*/
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--font-semi);
+}
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 40%;
+    height: 100%;
+    padding: 2rem;
+    background-color: #fff;
+    transition: 0.5s;
+  }
+}
+.nav__item {
+  margin-bottom: var(--mb-4);
+}
+
+.nav__link {
+  position: relative;
+}
+.nav__link:hover {
+  position: relative;
+}
+.nav__link:hover::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+.nav__logo {
+  color: var(--first-color); /* Changed this line */
+  font-weight: bold;
+  font-size: 25px;
+}
+.nav__toggle {
+  color: var(--first-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/*Active menu*/
+.active-link::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+
+/*=== Show menu ===*/
+.show {
+  right: 0;
+}
+
+/*===== HOME =====*/
+.home {
+  position: relative;
+  row-gap: 5rem;
+  padding: 4rem 0 5rem;
+}
+.home__data {
+  align-self: center;
+}
+.home__title {
+  font-size: var(--big-font-size);
+  margin-bottom: var(--mb-1);
+}
+.home__title-color {
+  color: var(--first-color);
+}
+.home__social {
+  display: flex;
+  flex-direction: row;
+}
+.home__social-icon {
+  width: max-content;
+  margin-bottom: var(--mb-1);
+  font-size: 1.5rem;
+  color: var(--second-color);
+}
+.home__social-icon:hover {
+  color: var(--first-color);
+}
+.home__img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 240px;
+}
+.home__blob {
+  fill: var(--first-color);
+}
+.home__blob-img {
+  width: 360px;
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+    padding: 2rem 0 3rem;
+  }
+
+  .home__title {
+    font-size: 1.4rem; /* Ukuran font lebih kecil di mobile */
+    text-align: center;
+    margin-top: -45px;
+    margin-bottom: -75px;
+  }
+
+  .home__data {
+    text-align: center;
+  }
+
+  .home__social {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .home__social-icon {
+    font-size: 1.2rem; /* Ukuran ikon lebih kecil */
+    margin: 0 0.3rem;
+  }
+
+  .home__img {
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: -20px;
+    width: 220px; /* Ukuran lebih kecil untuk mobile */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home__blob-img {
+    width: 350px; /* Ukuran gambar dalam blob lebih kecil */
+  }
+  .home.bd-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home__img {
+    order: 1;
+  }
+
+  .home__data {
+    order: 2;
+  }
+
+  .home__social {
+    order: 3;
+  }
+
+}
+
+
+/* ===== ABOUT =====*/
+.about__container {
+  row-gap: 2rem;
+  text-align: center;
+}
+.about__subtitle {
+  margin-bottom: var(--mb-2);
+}
+.about__img {
+  justify-self: center;
+}
+.about__img img {
+  width: 210px;
+  height: 280px;
+  border-radius: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .about__img img {
+    width: 150px;
+    height: 200px;
+    margin-bottom: -20px;
+  }
+}
+
+/* ===== SKILLS =====*/
+.skills__container {
+    gap: 1rem; /* Gap between the hard skills and soft skills sections */
+    max-width: 60%; /* Set a max-width for better control on larger screens */
+    margin-left: auto; /* Centers the block horizontally */
+    margin-right: auto; /* Centers the block horizontally */
+    padding: 0 1rem; /* Add some padding to prevent content from touching the edges on smaller screens */
+}
+
+/* Hard Skills specific container */
+.skills__hard-skills {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to single column for hard skills on small screens */
+    gap: 1rem; /* Gap between individual hard skill items */
+}
+
+/* Soft Skills specific container */
+.skills__soft-skills {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to single column for soft skills on small screens */
+    gap: 1rem; /* Gap between individual soft skill items */
+    margin-top: var(--mb-4); /* Add some space above the soft skills section */
+}
+
+
+/* Media query for larger screens to enable 2 columns for hard and soft skills */
+@media screen and (min-width: 768px) {
+    .skills__container {
+        grid-template-columns: 1fr; /* Still a single conceptual column for the main sections */
+        text-align: initial; /* Reset text-align for individual columns */
+        width: 100%;
+    }
+
+    .skills__hard-skills,
+    .skills__soft-skills {
+        grid-template-columns: repeat(2, 1fr); /* Two equal columns for BOTH hard and soft skills */
+    }
+
+    /* Adjust alignment for subtitles and text in multi-column layout for hard skills */
+    .skills__hard-skills > .skills__subtitle,
+    .skills__hard-skills > .skills__text {
+        grid-column: 1 / -1; /* Make subtitle and text span all columns */
+        text-align: left;
+    }
+
+    /* Adjust alignment for subtitles and text in soft skills */
+    .skills__soft-skills > .skills__subtitle,
+    .skills__soft-skills > .skills__text {
+        grid-column: 1 / -1; /* Make subtitle and text span all columns for soft skills too */
+        text-align: left;
+    }
+
+    /* Adjust alignment for individual skills data */
+    .skills__data {
+        text-align: left; /* Ensure individual skill data is left-aligned */
+    }
+}
+
+.skills__subtitle {
+    margin-bottom: var(--mb-2);
+}
+
+.skills__text {
+    margin-bottom: var(--mb-4);
+}
+
+.skills__data {
+    display: flex;
+    justify-content: space-between; /* This will push icon/name to left, percentage to right */
+    align-items: center;
+    position: relative;
+    font-weight: var(--font-semi);
+    padding: 0.5rem 1rem;
+    margin-bottom: var(--mb-4); /* Keep this if you want consistent spacing between skill bars within their sections */
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
+}
+
+.skills__icon {
+    font-size: 2rem;
+    margin-right: var(--mb-2);
+    color: var(--first-color);
+}
+
+/* Samakan vertikal alignment untuk ikon Font Awesome */
+.skills__icon.fa-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  font-size: 2rem; /* Sesuaikan agar mirip dengan Boxicons */
+  margin-right: var(--mb-2);
+}
+
+.skills__names {
+    display: flex;
+    align-items: center;
+}
+
+.skills__bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: var(--first-color);
+    height: 0.25rem;
+    border-radius: 0.5rem;
+    z-index: var(--z-back);
+}
+
+/* Individual skill bar widths */
+.skills__python {
+    width: 95%;
+}
+.skills__html {
+    width: 95%;
+}
+.skills__css {
+    width: 90%;
+}
+.skills__php {
+    width: 80%;
+}
+.skills__js {
+    width: 80%;
+}
+.skills__flask {
+    width: 90%;
+}
+.skills__django {
+    width: 85%;
+}
+.skills__bootstrap {
+    width: 85%;
+}
+.skills__tailwindcss {
+    width: 85%;
+}
+.skills__react {
+    width: 80%;
+}
+.skills__vuejs {
+    width: 80%;
+}
+.skills__mysql {
+    width: 85%;
+}
+.skills__nosql {
+    width: 75%;
+}
+.skills__postgresql {
+    width: 75%;
+}
+.skills__mongodb {
+    width: 75%;
+}
+.skills__word {
+    width: 90%;
+}
+.skills__excel {
+    width: 90%;
+}
+.skills__powerpoint {
+    width: 80%;
+}
+/* START: NEW DATA VISUALIZATION & SPREADSHEET SKILLS BAR STYLES */
+.skills__spreadsheet {
+    width: 90%;
+}
+
+.skills__powerbi {
+    width: 80%;
+}
+
+.skills__tableau {
+    width: 80%;
+}
+
+.skills__googlestudio { /* Menggunakan nama kelas ini untuk konsistensi */
+    width: 80%;
+}
+/* START: NEW NETWORK & DATA SKILLS BAR STYLES */
+.skills__mikrotik {
+    width: 85%;
+}
+.skills__network {
+    width: 85%;
+}
+
+/* Soft Skills bar widths */
+.skills__teamwork {
+    width: 95%; /* Example percentage */
+}
+.skills__communication {
+    width: 90%; /* Example percentage */
+}
+.skills__problemsolving {
+    width: 85%; /* Example percentage */
+}
+.skills__critical-thinking {
+    width: 90%; /* Example percentage */
+}
+.skills__innovative {
+    width: 88%; /* Example percentage */
+}
+.skills__interactive {
+    width: 82%; /* Example percentage */
+}
+
+@media screen and (max-width: 768px) {
+  .skills__container {
+    gap: 1rem; /* Gap between the hard skills and soft skills sections */
+    max-width: 90%; /* Set a max-width for better control on larger screens */
+    margin-left: auto; /* Centers the block horizontally */
+    margin-right: auto; /* Centers the block horizontally */
+    padding: 0 1rem; /* Add some padding to prevent content from touching the edges on smaller screens */
+  }
+  .skills__hard-skills,
+  .skills__soft-skills {
+    grid-template-columns: repeat(3, 1fr); /* Ubah jadi 2 kolom di mobile */
+  }
+
+  .skills__hard-skills > .skills__subtitle,
+  .skills__hard-skills > .skills__text,
+  .skills__soft-skills > .skills__subtitle,
+  .skills__soft-skills > .skills__text {
+    grid-column: 1 / -1; /* Judul dan teks tetap full width */
+    text-align: center;
+  }
+
+  .skills__data {
+    font-size: 0.6rem; /* Ukuran font lebih kecil agar pas */
+    padding: 0.2rem 0.3rem;
+  }
+
+  .skills__icon {
+    font-size: 1rem;
+    margin-right: 0.3rem;
+  }
+  /* Samakan vertikal alignment untuk ikon Font Awesome */
+  .skills__icon.fa-solid {
+    font-size: 1rem; /* Sesuaikan agar mirip dengan Boxicons */
+    margin-right: 0.2rem;
+    margin-left: -10px;
+  }
+  .skills__percentage {
+    font-size: 0.6rem;
+  }
+}
+
+
+/* ===== WORK =====*/
+/* Portfolio Section */
+.portfolio-container {
+    /* Default max-width untuk layar kecil, akan di-override untuk desktop besar */
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+    /* Gap dihapus dari sini, karena gap diatur di grid itu sendiri */
+}
+
+.portfolio-grid {
+    display: grid;
+    /* Default: 1 atau 2 kolom berdasarkan minmax pada layar yang lebih kecil */
+    /* Ini akan membuat 1 kolom di layar sangat kecil dan 2 kolom di layar mobile/tablet menengah */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem; /* Jarak yang konsisten antar proyek */
+}
+
+.portfolio-item {
+    background-color: var(--card-background, #ffffff); /* Menambahkan fallback putih */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Mendorong konten ke atas dan tombol ke bawah */
+}
+
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 180px; /* Tinggi default, akan disesuaikan untuk mobile dan 4-kolom desktop */
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.portfolio-item h3 {
+    font-size: 1.5rem; /* Ukuran font default untuk judul */
+    margin: 1.2rem 1.5rem 0.6rem;
+    color: var(--first-color, #333); /* Menambahkan fallback */
+    text-align: left;
+    line-height: 1.3;
+}
+
+.portfolio-item p {
+    padding: 0 1.5rem 1rem;
+    font-size: 0.95rem; /* Ukuran font default untuk paragraf */
+    color: var(--text-color, #555); /* Mengubah dari --primary-color menjadi --text-color, menambahkan fallback */
+    flex-grow: 1; /* Memungkinkan paragraf mengambil ruang yang tersedia */
+}
+
+/* --- Button Container Styles --- */
+.portfolio-actions {
+    display: flex; /* Membuat tombol sejajar dalam satu baris */
+    justify-content: space-around; /* Mendistribusikan ruang secara merata di antara dan di sekitar tombol */
+    padding: 0 1.5rem 1.5rem; /* Menambahkan padding di sekitar grup tombol */
+    gap: 1rem; /* Jarak antara tombol */
+    margin-top: auto; /* Mendorong tindakan ke bagian bawah jika tinggi konten bervariasi */
+    flex-wrap: wrap; /* Mengizinkan tombol untuk membungkus ke baris berikutnya di layar yang sangat kecil */
+}
+
+.btn-project {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; /* Memusatkan konten di dalam tombol */
+    gap: 0.5rem; /* Jarak yang lebih kecil antara ikon dan teks */
+    padding: 0.8rem 1.2rem; /* Padding yang sedikit lebih banyak untuk area klik yang lebih baik */
+    background-color: var(--first-color, #6a0dad); /* Menggunakan warna utama untuk konsistensi, menambahkan fallback */
+    color: var(--body-color, #fff); /* Warna teks, misalnya putih atau warna terang, menambahkan fallback */
+    border: none; /* Menghapus border default */
+    border-radius: 8px; /* Sudut tombol yang lebih membulat */
+    font-weight: 600; /* Teks yang sedikit lebih tebal */
+    text-decoration: none; /* Menghapus garis bawah */
+    flex: 1; /* Memungkinkan tombol untuk tumbuh dan menyusut secara merata */
+    min-width: 120px; /* Memastikan tombol tidak menjadi terlalu kecil */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Bayangan halus untuk kedalaman */
+    white-space: nowrap; /* Mencegah teks melilit di dalam tombol */
+}
+
+.btn-project:hover {
+    background-color: var(--first-color-alt, #5a0bac); /* Warna yang sedikit berbeda saat hover, menambahkan fallback */
+    transform: translateY(-3px); /* Efek angkat yang lebih menonjol */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* Bayangan yang lebih kuat saat hover */
+}
+
+.btn-project i {
+    font-size: 1rem; /* Ukuran ikon yang konsisten */
+}
+.read-more-btn {
+  background-color: transparent;
+  color: var(--first-color, #007bff);
+  border: none;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-right: 1rem;
+  margin-top: -20px;
+  text-decoration: underline;
+}
+
+.read-more-btn:hover {
+  color: var(--first-color-alt, #0056b3);
+}
+
+/* Anda mungkin ingin mendefinisikan variabel CSS ini di root atau gaya global Anda */
+/* Pastikan ini sudah ada atau tambahkan di bagian atas file CSS Anda */
+:root {
+    --header-height: 3rem;
+    --font-semi: 600;
+    --hue-color: 224;
+    --first-color: hsl(var(--hue-color), 89%, 60%);
+    --first-color-alt: hsl(var(--hue-color), 70%, 50%); /* Disesuaikan untuk hover */
+    --second-color: hsl(var(--hue-color), 56%, 12%);
+    --body-font: "Poppins", sans-serif;
+    --big-font-size: 2rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: .938rem;
+    --smaller-font-size: .75rem;
+    --mb-2: 1rem;
+    --mb-4: 2rem;
+    --mb-5: 2.5rem;
+    --mb-6: 3rem;
+    --z-back: -10;
+    --z-fixed: 100;
+
+    /* Variabel tambahan yang digunakan di sini */
+    --card-background: #ffffff;
+    --text-color: #555; /* Warna teks untuk paragraf */
+}
+
+/* --- Media Queries --- */
+
+/* Tablet & Smaller Desktop (2 kolom) */
+@media screen and (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk tablet */
+    }
+    .portfolio-item h3 {
+        font-size: 0.8rem; /* Font judul sedikit lebih kecil untuk 2 kolom */
+    }
+    .portfolio-item p {
+        font-size: 0.6rem; /* Font paragraf sedikit lebih kecil untuk 2 kolom */
+    }
+    .portfolio-item img {
+        height: 120px; /* Pertahankan tinggi gambar */
+    }
+    .portfolio-actions {
+        flex-direction: column; /* Tombol menumpuk secara vertikal di layar kecil */
+        align-items: stretch; /* Membuat tombol lebar penuh */
+    }
+    .btn-project {
+        margin-bottom: 0.4rem; /* Menambahkan spasi saat menumpuk */
+        font-size: 0.6rem; /* Font yang disesuaikan untuk tombol yang menumpuk */
+    }
+    .btn-project:last-child {
+        margin-bottom: 0; /* Tidak ada margin pada tombol tumpuk terakhir */
+    }
+    .btn-project {
+        padding: 0.4rem 0.6rem; /* Padding yang lebih kecil untuk tombol */
+        font-size: 0.6rem; /* Font yang lebih kecil untuk tombol */
+        min-width: unset; /* Izinkan flex menangani lebar */
+        flex: 1 1 auto; /* Izinkan tumbuh/menyusut tetapi lebih suka lebar otomatis */
+    }
+    .btn-project i {
+        font-size: 0.6rem; /* Ikon yang lebih kecil */
+    }
+    .read-more-btn {
+      font-size: 0.6rem;
+    }
+    .portfolio-item img {
+        height: 120px; /* Disesuaikan tinggi gambar untuk layar sangat kecil */
+    }
+  }
+
+/* Large Desktop (4 kolom) */
+@media screen and (min-width: 1200px) {
+    .portfolio-container {
+        max-width: 1200px; /* Kontainer yang lebih lebar untuk 4 kolom */
+    }
+    .portfolio-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 kolom */
+    }
+    .portfolio-item img {
+        height: 160px; /* Sesuaikan tinggi gambar untuk gambar yang lebih kecil dalam 4 kolom */
+    }
+    .portfolio-item h3 {
+        font-size: 1.1rem; /* Font yang lebih kecil untuk lebih banyak item */
+        margin: 1rem 1rem 0.5rem;
+    }
+    .portfolio-item p {
+        font-size: 0.8rem; /* Teks yang lebih kecil untuk lebih banyak item */
+        padding: 0 1rem 0.8rem;
+    }
+    .portfolio-actions {
+        padding: 0 1rem 1rem;
+        gap: 0.5rem; /* Jarak yang lebih kecil untuk tombol */
+    }
+    .btn-project {
+        padding: 0.6rem 0.8rem; /* Padding yang lebih kecil untuk tombol */
+        font-size: 0.85rem; /* Font yang lebih kecil untuk tombol */
+        min-width: unset; /* Izinkan flex menangani lebar */
+        flex: 1 1 auto; /* Izinkan tumbuh/menyusut tetapi lebih suka lebar otomatis */
+    }
+    .btn-project i {
+        font-size: 0.9rem; /* Ikon yang lebih kecil */
+    }
+}
+
+
+/* ===== FOOTER =====*/
+.footer {
+  background-color: var(--second-color);
+  color: #fff;
+  text-align: center;
+  font-weight: var(--font-semi);
+  padding: 2rem 0;
+  margin-top: var(--mb-2);
+}
+.footer__title {
+  font-size: 2rem;
+  margin-bottom: var(--mb-1);
+}
+.footer__social {
+  margin-bottom: var(--mb-2);
+}
+.footer__icon {
+  font-size: 2rem;
+  color: var(--first-color);
+  margin: 0 var(--mb-2);
+}
+.footer__copy {
+  font-size: var(--smaller-font-size);
+}
+
+@media screen and (max-width: 768px) {
+  .footer__title {
+    font-size: 1.5rem;
+  }
+
+  .footer__icon {
+    margin: 5px
+  }
+  .footer__copy {
+    font-size: 0.8rem;
+  }
+
+}
+
+/* ===== MEDIA QUERIES=====*/
+@media screen and (max-width: 320px) {
+  .home {
+    row-gap: 2rem;
+  }
+  .home__img {
+    width: 200px;
+  }
+}
+@media screen and (min-width: 576px) {
+  .home {
+    padding: 4rem 0 2rem;
+  }
+  .home__social {
+    padding-top: 0;
+    padding-bottom: 2.5rem;
+    flex-direction: row;
+    align-self: flex-end;
+  }
+  .home__social-icon {
+    margin-bottom: 0;
+    margin-right: var(--mb-4);
+  }
+  .home__img {
+    width: 300px;
+    bottom: 25%;
+  }
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: initial;
+  }
+  .skills__container {
+    grid-template-columns: 0.7fr;
+    justify-content: center;
+    column-gap: 1rem;
+  }
+  .work__container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    padding-top: 2rem;
+  }
+  .contact__container {
+    justify-items: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+  .section {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+  .section-title {
+    margin-bottom: var(--mb-6);
+  }
+  .section-title::after {
+    width: 80px;
+    top: 3rem;
+  }
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+  .nav__list {
+    display: flex;
+    padding-top: 0;
+  }
+  .nav__item {
+    margin-left: var(--mb-6);
+    margin-bottom: 0;
+  }
+  .nav__toggle {
+    display: none;
+  }
+  .nav__link {
+    color: var(--second-color);
+  }
+  .home {
+    padding: 8rem 0 2rem;
+  }
+  .home__img {
+    width: 400px;
+    bottom: 10%;
+  }
+  .about__container {
+    padding-top: 2rem;
+  }
+  .about__img img {
+    width: 300px;
+  }
+  .skills__container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    align-items: center;
+    text-align: initial;
+  }
+  .work__container {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home {
+    padding: 10rem 0 2rem;
+  }
+  .home__img {
+    width: 450px;
+  }
+}

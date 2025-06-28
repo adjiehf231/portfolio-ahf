@@ -1,0 +1,627 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Georgia, 'Times New Roman';
+    background: rgb(206, 205, 205);
+}
+body {
+    /* Flex column sudah di html, bisa di sini juga */
+    flex-direction: column;
+}
+
+.header {
+    position: fixed;
+    top: 15px;
+    left: 0px;
+    z-index: 1001;
+    border: none;
+    padding: 7px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 60px;
+}
+
+.user-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.username {
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+
+/* Tombol toggle */
+.toggle-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    color: rgb(87, 85, 85);
+    border: none;
+    padding: 7px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    padding-top: 20px;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+/* Sidebar hidden */
+.sidebar.hidden {
+    transform: translateX(-200px);
+}
+
+/* Sidebar menu */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 60px;
+    font-weight: bold;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    text-align: left;
+    margin-left: 5px;
+}
+
+.sidebar ul li a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li.active {
+    background-color: #ffcc0096;
+    border-left: 5px solid #fff;
+}
+
+.sidebar ul li.active a {
+    color: #333;
+}
+
+/* Main content */
+.main-content {
+    width: calc(100% - 200px);
+    flex-grow: 1; /* agar konten mengisi sisa space */
+    padding-bottom: 60px; /* beri ruang bawah untuk footer */
+}
+
+.main-content.shrinked {
+    margin-left: 0;
+    width: 100%; /* <- fix posisi center */
+}
+
+/* Main content default (sidebar on) */
+.main-content {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+    transition: all 0.3s ease;
+}
+
+/* Main content ketika sidebar disembunyikan (toggle off) */
+.main-content.full-width {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* Margin dinamis untuk konten di dalam main-content */
+.table-container,
+.dataset_list,
+.upload {
+    margin-left: 200px; /* default margin saat sidebar ON */
+    transition: margin 0.3s ease;
+}
+
+
+/* Margin saat sidebar OFF */
+.main-content.full-width .table-container,
+.main-content.full-width .dataset_list,
+.main-content.full-width .upload {
+    margin-left: 20px; /* kecilkan margin agar full lebar */
+}
+
+
+/* Header konten */
+.h1-content {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background-color: #585d64;
+    padding: 20px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 0;
+    z-index: 1;
+    position: relative;
+}
+
+
+/* Konten deskripsi */
+.content {
+    margin-top: 10px;
+    padding: 5px;
+    color: black;
+    background-color: rgb(206, 205, 205);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.content-data {
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 5px;
+    color: black;
+    background-color: rgb(206, 205, 205);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    line-height: 1.3;
+    text-align: left;
+}
+
+h2, h3 {
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 30px;
+    color: black;
+}
+
+.center-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    padding-bottom: 80px;
+    background: rgb(206, 205, 205);
+    margin-top: -250px;
+}
+
+
+.form-card {
+    background:#585d64;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 1100px;
+    margin-left:  0 auto;
+}
+
+.form-card h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+.form-section label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.checkbox-label {
+    background: #656c75;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.checkbox-label:hover {
+    background: #f0f0f0;
+    border-color: #aaa;
+}
+
+.datetime-options {
+    display: none;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.button-section {
+    text-align: center;
+}
+
+button {
+    background: #ffc107;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    color: #000;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: Georgia, 'Times New Roman';
+}
+
+button:hover {
+    background: #e0a800;
+}
+
+.result-chart-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -250px;
+}
+
+.result-chart {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto; /* menggantikan margin-left: 200px */
+    box-sizing: border-box;
+}
+
+form select {
+    margin-right: 10px;
+    position: center;
+}
+
+
+.table-container {
+    max-height: 400px;
+    overflow-y: scroll; /* tampilkan scroll bar selalu */
+    overflow-x: auto;
+    border: 1px solid #ddd;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    font-family: Georgia, 'Times New Roman';
+    margin-left: auto;
+    width: 90%;
+}
+
+/* Scrollbar styling (Webkit) */
+.table-container::-webkit-scrollbar {
+    width: 15px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Tabel umum */
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Header tabel */
+.table-container th {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    text-align: center;
+    padding: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Sel data tabel */
+.tabel-container td {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    text-align: center;
+    padding: 8px;
+    text-align: center;
+}
+
+
+/* Table style (optional) */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.data-table th {
+    background-color: #2702f8;
+    position: sticky;
+    top: -5px;
+    margin-bottom: 5px;
+}
+
+.dataset_list, .upload {
+    margin-left: 30px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+.form-section {
+    margin-bottom: 2rem;
+}
+.error {
+    color: red;
+}
+.radio-group {
+    margin-top: 1rem;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+li {
+    margin: 8px 0;
+}
+
+.p {
+    text-align: center;
+}
+
+.flash {
+    padding: 12px;
+    margin-left: 275px;
+    width: 80%;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    animation: fadeOut 4s ease-out forwards;
+}
+
+.flash.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.flash.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; display: none; }
+}
+
+
+.table-user {
+    max-height: 70vh;
+    overflow-y: auto;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-family: Georgia, 'Times New Roman', serif;
+    margin-left: 0px;
+    margin-right: 20px;
+    margin-top: 20px;
+    background-color: rgb(206, 205, 205);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.table-user table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+
+.table-user th, .table-user td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    text-align: center;
+
+}
+
+.table-user th {
+    background-color: #585d64;
+    color: rgb(255, 255, 255);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+    .table-user {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.botton-user {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+button[type="user"] {
+    background: #ffc107;
+    border: none;
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    color: #000;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: Georgia, 'Times New Roman';
+}
+/* FORM CONTAINER */
+.form-user {
+    background: #ffffff;
+    padding: 30px 20px;
+    margin: 20px 20px 20px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* FORM TITLE */
+.form-user h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* LABEL & INPUT */
+.form-user label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
+}
+
+.form-user input[type="text"],
+.form-user input[type="password"],
+.form-user select {
+    width: 98%;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.form-user input:focus,
+.form-user select:focus {
+    border-color: #f2b705;
+    box-shadow: 0 0 5px rgba(242,183,5,0.5);
+    outline: none;
+}
+
+/* BUTTON */
+.form-user button {
+    background: #f2b705;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-user button:hover {
+    background: #dca604;
+}
+
+/* HIDDEN CLASS */
+.hidden {
+    display: none;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .form-user {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+}
+
+.password-wrapper button {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #ccc;
+    font-size: 16px;
+    cursor: pointer;
+    }
+
+.footer {
+    flex-shrink: 0; /* jangan kecilkan footer */
+    background: #585d64;
+    color: #fff;
+    text-align: center;
+    padding: 0px 0px;
+    font-size: 14px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.footer.full {
+    width: 100%;
+}

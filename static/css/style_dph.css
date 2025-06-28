@@ -1,0 +1,206 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    padding: 20px;
+}
+
+/* Navigation Bar */
+.navigation {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Pastikan navigasi memiliki lebar penuh */
+    box-sizing: border-box; /* Memastikan padding tidak mempengaruhi ukuran */
+    padding: 14px 0;
+    background-color: #27b42c;
+    position: relative;
+}
+
+.navigation a {
+    color: #000000;
+    text-decoration: none;
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navigation a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Main Content */
+.content {
+    max-width: 90%;
+    margin: 20px auto;
+}
+
+.intro h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #4CAF50;
+}
+
+.intro p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.info h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.info p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Gambar Tanaman dan Metode Pakar */
+.plants, .method-image {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.plant-image, .method-image {
+    display: block; /* Menambahkan display block untuk gambar */
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* Memastikan gambar terpusat secara horizontal */
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+    }
+
+    .intro h1 {
+        font-size: 2rem;
+    }
+
+    .intro p {
+        font-size: 1rem;
+    }
+
+    .info h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+h1,
+h2 {
+    text-align: center;
+}
+
+
+ul {
+    padding-left: 40px;
+    /* Adjust the indentation as needed */
+}
+
+/* Adjust the indentation of the gejala and solusi */
+ul ul {
+    padding-left: 20px;
+    /* Adjust the indentation as needed */
+}
+
+/* Align the tanaman to the right slightly */
+ul li {
+    margin-right: 10px;
+    /* Adjust the margin as needed */
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+li {
+    margin: 5px 0;
+}
+
+
+/* Align the gejala_data to the right */
+ul.tanaman {
+    text-align: left;
+    padding-left: 30px;
+    /* Adjust the padding as needed */
+}
+
+/* Align the gejala_data to the right */
+ul.gejala {
+    text-align: left;
+    padding-left: 30px;
+    /* Adjust the padding as needed */
+}
+
+
+form {
+    width: 90%;
+    margin: 10px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+#gejala-list {
+    display: none;
+}
+
+.diagnosis-result {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.diagnosis-result h2,
+.diagnosis-result h3 {
+    color: #333;
+    padding-left: 10px;
+}
+
+.diagnosis-result ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.diagnosis-result li {
+    margin: 5px 0;
+}
+
+.diagnosis-error {
+    text-align: center;
+    color: red;
+
+}

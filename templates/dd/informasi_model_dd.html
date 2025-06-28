@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Klasifikasi Pendonor Darah</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/style_dd.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">Donor<span> Darah</span></div>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+
+        <!-- NAV MENU -->
+        <nav class="nav" id="navMenu">
+            <a href="../../index.html">Kembali Ke Portofolio</a>
+            <a href="home_dd.html">Home</a>
+            <a href="prediksi_dd.html">Prediksi</a>
+            <a href="informasi_model_dd.html">Informasi</a>
+        </nav>
+    </header>
+
+    <!-- KONTEN UTAMA -->
+    <main class="container">
+
+    <div class="informasi-model">
+    <h2>Informasi Model</h2>
+        <div class="card-info-model">
+          <h3>Bagaimana Model Dibangun?</h3>
+          <p>Model prediksi ini dikembangkan menggunakan **algoritma Machine Learning** untuk mengidentifikasi potensi kelayakan seseorang sebagai pendonor darah. Kami melatih model dengan dataset historis yang luas dari data pendonor darah, mencakup berbagai atribut kesehatan.</p>
+          <p>Proses pembangunannya meliputi:</p>
+          <ul>
+              <li>**Pengumpulan Data:** Mengumpulkan data anonim dari riwayat donor darah.</li>
+              <li>**Pra-pemrosesan Data:** Membersihkan, menormalisasi, dan mengubah data agar sesuai untuk analisis model (misalnya, menangani nilai yang hilang, mengonversi data kategorikal).</li>
+              <li>**Pemilihan Fitur:** Memilih variabel yang paling relevan yang berkontribusi pada keputusan donor.</li>
+              <li>**Pelatihan Model:** Melatih algoritma Random Forest menggunakan data yang telah diproses untuk mempelajari pola yang membedakan pendonor yang layak dan tidak layak.</li>
+              <li>**Evaluasi & Tuning:** Menguji kinerja model menggunakan metrik seperti akurasi, presisi, recall, F1-score, MCC, Kurva ROC AUC, kemudian menyempurnakan parameter untuk hasil terbaik.</li>
+              </ul>
+              <p>Tujuan utama model ini adalah untuk memberikan indikasi awal kelayakan, membantu calon pendonor memahami persyaratan dasar.</p>
+          </div>
+
+    <h3>Tabel Hasil K-Fold</h3>
+    <table border="1" id="kfold">
+      <thead>
+      <tr>
+        <th>Iterasi</th>
+        <th>TP</th>
+        <th>FP</th>
+        <th>FN</th>
+        <th>TN</th>
+        <th>Accuracy</th>
+        <th>Precision</th>
+        <th>Recall</th>
+        <th>F1-Score</th>
+        <th>MCC</th>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>      
+    </table>
+
+    <h3>Best Model Fold</h3>
+    <table border="1">
+      <tr>
+        <th>Iterasi</th><th>TP</th><th>FP</th><th>FN</th><th>TN</th>
+        <th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1-Score</th><th>MCC</th>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>76</td>
+        <td>0</td>
+        <td>2</td>
+        <td>76</td>
+        <td>0.9870</td>
+        <td>1.000</td>
+        <td>0.9744</td>
+        <td>0.9870</td>
+        <td>0.9744</td>
+      </tr>
+    </table>
+
+    <h3>Agregasi Rata-rata</h3>
+    <table border="1">
+      <tr>
+        <th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1-Score</th><th>MCC</th>
+      </tr>
+      <tr style="text-align: center;">
+        <td>0.9740</td>
+        <td>0.9668</td>
+        <td>0.9819</td>
+        <td>0.9741</td>
+        <td>0.9744</td>
+      </tr>
+    </table>
+
+    <h3>Confusion Matrix dan ROC Curve (Best Fold)</h3>
+    <div class="confusion-roc-container">
+        <img src="../../static/img/dd/cm_best_fold.png" alt="Confusion Matrix">
+        <img src="../../static/img/dd/roc_best_fold.png" alt="ROC Curve">
+    </div>
+
+
+    </div>
+    </main>
+
+    <script src="../../static/js/script_dd.js"></script>
+</body>
+</html>

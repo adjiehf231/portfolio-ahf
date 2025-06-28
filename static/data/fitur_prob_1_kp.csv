@@ -1,0 +1,31 @@
+Fitur,Probabilitas
+perimeter_worst,0.4771
+area_worst,0.4643
+radius_worst,0.4548
+concave points_mean,0.4396
+concave points_worst,0.4375
+perimeter_mean,0.4027
+concavity_mean,0.3747
+radius_mean,0.3715
+area_mean,0.3620
+area_se,0.3408
+concavity_worst,0.3177
+perimeter_se,0.2768
+radius_se,0.2478
+compactness_worst,0.2244
+compactness_mean,0.2122
+concave points_se,0.1275
+texture_worst,0.1208
+concavity_se,0.1176
+texture_mean,0.1010
+smoothness_worst,0.0972
+symmetry_worst,0.0945
+smoothness_mean,0.0801
+compactness_se,0.0765
+fractal_dimension_worst,0.0653
+symmetry_mean,0.0639
+fractal_dimension_se,0.0378
+symmetry_se,0.0188
+smoothness_se,0.0149
+fractal_dimension_mean,0.0076
+texture_se,0.0008

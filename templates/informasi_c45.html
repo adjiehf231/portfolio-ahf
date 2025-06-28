@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Informasi Pohon Keputusan C4.5</title>
+    <link rel="stylesheet" href="../static/css/style_c45.css">
+</head>
+<body>
+    <!-- Hamburger Menu Button -->
+    <div class="hamburger" id="hamburger">&#9776;</div>
+
+    <!-- Navigation Links -->
+    <div class="navigation" id="navLinks">
+        <a href="../index.html">Kembali Ke Portofolio</a>
+        <a href="index_c45.html">Beranda</a>
+        <a href="prediksi_c45.html">Prediksi Stunting</a>
+        <a href="informasi_c45.html">Informasi Model C45</a>
+        <a href="dp_c45.html">Data Prediksi</a>
+    </div>
+    <h1>Informasi Pohon Keputusan C4.5</h1>
+
+        <h2>Decision Tree Rules:</h2>
+        <div id="decision_tree_rules">
+        <li>height = 43 => Class: 1</li><br>
+        <li>height = 44 => Class: 1</li><br>
+        <li>height = 74 AND age = 20 => Class: 1</li><br>
+        <li>height = 74 AND age = 14 => Class: 0</li><br>
+        <li>height = 74 AND age = 21 => Class: 1</li><br>
+        <li>height = 74 AND age = 16 => Class: 1</li><br>
+        <li>height = 74 AND age = 12 => Class: 0</li><br>
+        <li>height = 74 AND age = 11 => Class: 0</li><br>
+        <li>height = 74 AND age = 9 => Class: 0</li><br>
+        <li>height = 74 AND age = 15 AND gender = 1 => Class: 1</li><br>
+        <li>height = 74 AND age = 15 AND gender = 0 AND weight = 8 => Class: 0</li><br>
+        <li>height = 74 AND age = 15 AND gender = 0 AND weight = 9 => Class: 0</li><br>
+        <li>height = 74 AND age = 13 => Class: 0</li><br>
+        <li>height = 74 AND age = 17 AND weight = 9 => Class: 1</li><br>
+        <li>height = 74 AND age = 17 AND weight = 8 AND gender = 1 => Class: 1</li><br>
+        <li>height = 74 AND age = 19 => Class: 1</li><br>
+        <li>height = 74 AND age = 22 => Class: 1</li><br>
+        <li>height = 74 AND age = 18 => Class: 1</li><br>
+        <li>height = 74 AND age = 10 => Class: 0</li><br>
+        <li>height = 74 AND age = 24 => Class: 1</li><br>
+        <li>height = 64 AND age = 4 => Class: 0</li><br>
+        <li>height = 64 AND age = 5 => Class: 0</li><br>
+        <li>height = 64 AND age = 6 => Class: 0</li><br>
+        <li>height = 64 AND age = 7 => Class: 1</li><br>
+        <li>height = 64 AND age = 10 => Class: 1</li><br>
+        <li>height = 64 AND age = 3 => Class: 0</li><br>
+        <li>height = 64 AND age = 8 => Class: 1</li><br>
+        <li>height = 64 AND age = 2 => Class: 0</li><br>
+        <li>height = 64 AND age = 9 => Class: 1</li><br>
+        <li>height = 73 AND age = 9 => Class: 0</li><br>
+        <li>height = 73 AND age = 14 AND gender = 0 AND weight = 9 => Class: 0</li><br>
+        <li>height = 73 AND age = 14 AND gender = 0 AND weight = 8 => Class: 0</li><br>
+        <li>height = 73 AND age = 14 AND gender = 1 => Class: 1</li><br>
+        <li>height = 73 AND age = 12 => Class: 0</li><br>
+        <li>height = 73 AND age = 11 => Class: 0</li><br>
+        <li>height = 73 AND age = 21 => Class: 1</li><br>
+        <li>height = 73 AND age = 10 => Class: 0</li><br>
+        <li>height = 73 AND age = 13 AND weight = 9 => Class: 0</li><br>
+        <li>height = 73 AND age = 13 AND weight = 7 => Class: 0</li><br>
+        <li>height = 73 AND age = 13 AND weight = 8 => Class: 1</li><br>
+        <li>height = 73 AND age = 16 => Class: 1</li><br>
+        <li>height = 73 AND age = 15 => Class: 1</li><br>
+        <li>height = 73 AND age = 17 => Class: 1</li><br>
+        <li>height = 76 AND age = 19 => Class: 1</li><br>
+        <li>height = 76 AND age = 18 AND gender = 1 => Class: 1</li><br>
+        <li>height = 76 AND age = 18 AND gender = 0 => Class: 0</li><br>
+        <li>height = 76 AND age = 16 => Class: 0</li><br>
+        <li>height = 76 AND age = 20 => Class: 1</li><br>
+        <li>height = 76 AND age = 22 => Class: 1</li><br>
+        <li>height = 76 AND age = 12 => Class: 0</li><br>
+        <li>height = 76 AND age = 14 AND gender = 1 => Class: 0</li><br>
+        <li>height = 76 AND age = 14 AND gender = 0 => Class: 1</li><br>
+        <li>height = 76 AND age = 15 => Class: 0</li><br>
+        <li>height = 76 AND age = 23 => Class: 1</li><br>
+        <li>height = 76 AND age = 17 => Class: 0</li><br>
+        <li>height = 76 AND age = 9 => Class: 0</li><br>
+        <li>height = 76 AND age = 21 => Class: 1</li><br>
+        <li>height = 62 => Class: 0</li><br>
+        <li>height = 81 AND age = 20 => Class: 0</li><br>
+        <li>height = 81 AND age = 21 => Class: 0</li><br>
+        <li>height = 81 AND age = 23 => Class: 0</li><br>
+        <li>height = 81 AND age = 22 => Class: 0</li><br>
+        <li>height = 81 AND age = 17 => Class: 0</li><br>
+        <li>height = 81 AND age = 24 => Class: 1</li><br>
+        <li>height = 81 AND age = 18 => Class: 0</li><br>
+        <li>height = 81 AND age = 15 => Class: 0</li><br>
+        <li>height = 81 AND age = 19 => Class: 0</li><br>
+        <li>height = 81 AND age = 13 => Class: 0</li><br>
+        <li>height = 81 AND age = 16 => Class: 0</li><br>
+        <li>height = 68 AND age = 7 => Class: 0</li><br>
+        <li>height = 68 AND age = 9 AND weight = 6 => Class: 0</li><br>
+        <li>height = 68 AND age = 9 AND weight = 8 AND gender = 0 => Class: 0</li><br>
+        <li>height = 68 AND age = 9 AND weight = 7 => Class: 0</li><br>
+        <li>height = 68 AND age = 8 => Class: 0</li><br>
+        <li>height = 68 AND age = 11 => Class: 1</li><br>
+        <li>height = 68 AND age = 6 => Class: 0</li><br>
+        <li>height = 68 AND age = 10 AND gender = 1 AND weight = 7 => Class: 1</li><br>
+        <li>height = 68 AND age = 10 AND gender = 0 => Class: 1</li><br>
+        <li>height = 68 AND age = 5 => Class: 0</li><br>
+        <li>height = 68 AND age = 12 => Class: 1</li><br>
+        <li>height = 68 AND age = 4 => Class: 0</li><br>
+        <li>height = 68 AND age = 14 => Class: 1</li><br>
+        <li>height = 82 => Class: 0</li><br>
+        <li>height = 77 AND age = 17 => Class: 0</li><br>
+        <li>height = 77 AND age = 21 => Class: 1</li><br>
+        <li>height = 77 AND age = 18 => Class: 0</li><br>
+        <li>height = 77 AND age = 13 AND weight = 9 => Class: 0</li><br>
+        <li>height = 77 AND age = 13 AND weight = 10 AND gender = 0 => Class: 0</li><br>
+        <li>height = 77 AND age = 20 => Class: 1</li><br>
+        <li>height = 77 AND age = 15 => Class: 0</li><br>
+        <li>height = 77 AND age = 19 => Class: 1</li><br>
+        <li>height = 77 AND age = 12 => Class: 0</li><br>
+        <li>height = 77 AND age = 16 => Class: 0</li><br>
+        <li>height = 77 AND age = 10 => Class: 0</li><br>
+        <li>height = 77 AND age = 9 => Class: 0</li><br>
+        <li>height = 77 AND age = 22 => Class: 1</li><br>
+        <li>height = 77 AND age = 14 => Class: 0</li><br>
+        <li>height = 77 AND age = 23 => Class: 1</li><br>
+        <li>height = 77 AND age = 11 => Class: 1</li><br>
+        <li>height = 65 AND age = 3 => Class: 0</li><br>
+        <li>height = 65 AND age = 11 => Class: 1</li><br>
+        <li>height = 65 AND age = 5 => Class: 0</li><br>
+        <li>height = 65 AND age = 6 => Class: 0</li><br>
+        <li>height = 65 AND age = 2 => Class: 0</li><br>
+        <li>height = 65 AND age = 4 => Class: 0</li><br>
+        <li>height = 65 AND age = 9 => Class: 1</li><br>
+        <li>height = 65 AND age = 7 => Class: 0</li><br>
+        <li>height = 65 AND age = 12 => Class: 1</li><br>
+        <li>height = 65 AND age = 8 => Class: 1</li><br>
+        <li>height = 65 AND age = 10 => Class: 1</li><br>
+        <li>height = 80 AND age = 19 => Class: 0</li><br>
+        <li>height = 80 AND age = 22 AND gender = 1 AND weight = 9 => Class: 1</li><br>
+        <li>height = 80 AND age = 22 AND gender = 0 AND weight = 10 => Class: 0</li><br>
+        <li>height = 80 AND age = 24 => Class: 1</li><br>
+        <li>height = 80 AND age = 16 => Class: 0</li><br>
+        <li>height = 80 AND age = 12 => Class: 0</li><br>
+        <li>height = 80 AND age = 23 AND gender = 1 => Class: 1</li><br>
+        <li>height = 80 AND age = 23 AND gender = 0 => Class: 0</li><br>
+        <li>height = 80 AND age = 21 => Class: 0</li><br>
+        <li>height = 80 AND age = 20 => Class: 0</li><br>
+        <li>height = 80 AND age = 14 => Class: 0</li><br>
+        <li>height = 80 AND age = 18 => Class: 0</li><br>
+        <li>height = 80 AND age = 17 => Class: 0</li><br>
+        <li>height = 67 AND age = 11 => Class: 1</li><br>
+        <li>height = 67 AND age = 4 => Class: 0</li><br>
+        <li>height = 67 AND age = 5 => Class: 0</li><br>
+        <li>height = 67 AND age = 14 => Class: 1</li><br>
+        <li>height = 67 AND age = 8 => Class: 0</li><br>
+        <li>height = 67 AND age = 6 => Class: 0</li><br>
+        <li>height = 67 AND age = 9 => Class: 1</li><br>
+        <li>height = 67 AND age = 7 => Class: 0</li><br>
+        <li>height = 67 AND age = 10 => Class: 1</li><br>
+        <li>height = 67 AND age = 12 => Class: 1</li><br>
+        <li>height = 53 AND weight = 4 => Class: 0</li><br>
+        <li>height = 53 AND weight = 5 AND gender = 1 AND age = 0 => Class: 0</li><br>
+        <li>height = 53 AND weight = 5 AND gender = 1 AND age = 1 => Class: 1</li><br>
+        <li>height = 53 AND weight = 5 AND gender = 0 => Class: 0</li><br>
+        <li>height = 78 AND age = 22 AND gender = 1 AND weight = 9 => Class: 1</li><br>
+        <li>height = 78 AND age = 22 AND gender = 1 AND weight = 8 => Class: 1</li><br>
+        <li>height = 78 AND age = 22 AND gender = 1 AND weight = 10 => Class: 1</li><br>
+        <li>height = 78 AND age = 22 AND gender = 0 => Class: 1</li><br>
+        <li>height = 78 AND age = 17 => Class: 0</li><br>
+        <li>height = 78 AND age = 16 => Class: 0</li><br>
+        <li>height = 78 AND age = 18 => Class: 0</li><br>
+        <li>height = 78 AND age = 24 => Class: 1</li><br>
+        <li>height = 78 AND age = 23 => Class: 1</li><br>
+        <li>height = 78 AND age = 12 => Class: 0</li><br>
+        <li>height = 78 AND age = 21 => Class: 1</li><br>
+        <li>height = 78 AND age = 9 => Class: 0</li><br>
+        <li>height = 78 AND age = 10 => Class: 0</li><br>
+        <li>height = 78 AND age = 20 AND gender = 0 AND weight = 10 => Class: 0</li><br>
+        <li>height = 78 AND age = 13 => Class: 0</li><br>
+        <li>height = 78 AND age = 15 => Class: 0</li><br>
+        <li>height = 78 AND age = 19 => Class: 0</li><br>
+        <li>height = 54 AND age = 1 => Class: 0</li><br>
+        <li>height = 54 AND age = 0 => Class: 0</li><br>
+        <li>height = 54 AND age = 2 => Class: 1</li><br>
+        <li>height = 61 AND age = 6 => Class: 1</li><br>
+        <li>height = 61 AND age = 4 AND gender = 1 => Class: 0</li><br>
+        <li>height = 61 AND age = 4 AND gender = 0 => Class: 1</li><br>
+        <li>height = 61 AND age = 5 => Class: 1</li><br>
+        <li>height = 61 AND age = 3 => Class: 0</li><br>
+        <li>height = 61 AND age = 2 => Class: 0</li><br>
+        <li>height = 61 AND age = 1 => Class: 0</li><br>
+        <li>height = 79 AND age = 20 => Class: 0</li><br>
+        <li>height = 79 AND age = 15 => Class: 0</li><br>
+        <li>height = 79 AND age = 21 AND weight = 10 AND gender = 0 => Class: 0</li><br>
+        <li>height = 79 AND age = 21 AND weight = 10 AND gender = 1 => Class: 0</li><br>
+        <li>height = 79 AND age = 21 AND weight = 9 => Class: 1</li><br>
+        <li>height = 79 AND age = 21 AND weight = 8 => Class: 1</li><br>
+        <li>height = 79 AND age = 22 => Class: 1</li><br>
+        <li>height = 79 AND age = 12 AND gender = 0 AND weight = 11 => Class: 0</li><br>
+        <li>height = 79 AND age = 16 => Class: 0</li><br>
+        <li>height = 79 AND age = 23 => Class: 1</li><br>
+        <li>height = 79 AND age = 18 => Class: 0</li><br>
+        <li>height = 79 AND age = 19 => Class: 0</li><br>
+        <li>height = 79 AND age = 17 => Class: 0</li><br>
+        <li>height = 79 AND age = 13 => Class: 0</li><br>
+        <li>height = 66 AND age = 5 => Class: 0</li><br>
+        <li>height = 66 AND age = 12 => Class: 1</li><br>
+        <li>height = 66 AND age = 10 => Class: 1</li><br>
+        <li>height = 66 AND age = 9 => Class: 1</li><br>
+        <li>height = 66 AND age = 3 => Class: 0</li><br>
+        <li>height = 66 AND age = 6 => Class: 0</li><br>
+        <li>height = 66 AND age = 7 => Class: 0</li><br>
+        <li>height = 66 AND age = 8 AND weight = 8 => Class: 1</li><br>
+        <li>height = 66 AND age = 8 AND weight = 7 AND gender = 0 => Class: 0</li><br>
+        <li>height = 66 AND age = 4 => Class: 0</li><br>
+        <li>height = 66 AND age = 11 => Class: 1</li><br>
+        <li>height = 57 AND weight = 4 => Class: 1</li><br>
+        <li>height = 57 AND weight = 6 => Class: 0</li><br>
+        <li>height = 57 AND weight = 5 AND age = 2 => Class: 0</li><br>
+        <li>height = 57 AND weight = 5 AND age = 1 => Class: 0</li><br>
+        <li>height = 57 AND weight = 5 AND age = 3 AND gender = 0 => Class: 0</li><br>
+        <li>height = 72 AND age = 12 => Class: 0</li><br>
+        <li>height = 72 AND age = 14 => Class: 1</li><br>
+        <li>height = 72 AND age = 9 => Class: 0</li><br>
+        <li>height = 72 AND age = 19 => Class: 1</li><br>
+        <li>height = 72 AND age = 11 AND gender = 1 => Class: 0</li><br>
+        <li>height = 72 AND age = 11 AND gender = 0 AND weight = 10 => Class: 0</li><br>
+        <li>height = 72 AND age = 11 AND gender = 0 AND weight = 8 => Class: 0</li><br>
+        <li>height = 72 AND age = 16 => Class: 1</li><br>
+        <li>height = 72 AND age = 7 => Class: 0</li><br>
+        <li>height = 72 AND age = 24 => Class: 1</li><br>
+        <li>height = 72 AND age = 15 => Class: 1</li><br>
+        <li>height = 72 AND age = 13 AND gender = 0 AND weight = 7 => Class: 0</li><br>
+        <li>height = 72 AND age = 13 AND gender = 1 => Class: 0</li><br>
+        <li>height = 72 AND age = 10 => Class: 0</li><br>
+        <li>height = 72 AND age = 18 => Class: 1</li><br>
+        <li>height = 72 AND age = 21 => Class: 1</li><br>
+        <li>height = 72 AND age = 8 => Class: 0</li><br>
+        <li>height = 72 AND age = 4 => Class: 0</li><br>
+        <li>height = 72 AND age = 23 => Class: 1</li><br>
+        <li>height = 60 AND age = 2 => Class: 0</li><br>
+        <li>height = 60 AND age = 4 => Class: 0</li><br>
+        <li>height = 60 AND age = 3 => Class: 0</li><br>
+        <li>height = 60 AND age = 7 => Class: 1</li><br>
+        <li>height = 60 AND age = 6 => Class: 1</li><br>
+        <li>height = 55 AND age = 3 => Class: 1</li><br>
+        <li>height = 55 AND age = 1 => Class: 0</li><br>
+        <li>height = 55 AND age = 0 => Class: 0</li><br>
+        <li>height = 55 AND age = 2 => Class: 0</li><br>
+        <li>height = 75 AND age = 9 => Class: 0</li><br>
+        <li>height = 75 AND age = 20 => Class: 1</li><br>
+        <li>height = 75 AND age = 15 => Class: 0</li><br>
+        <li>height = 75 AND age = 12 => Class: 0</li><br>
+        <li>height = 75 AND age = 10 AND weight = 8 AND gender = 1 => Class: 0</li><br>
+        <li>height = 75 AND age = 10 AND weight = 8 AND gender = 0 => Class: 1</li><br>
+        <li>height = 75 AND age = 10 AND weight = 9 => Class: 0</li><br>
+        <li>height = 75 AND age = 10 AND weight = 10 => Class: 0</li><br>
+        <li>height = 75 AND age = 13 => Class: 0</li><br>
+        <li>height = 75 AND age = 16 AND weight = 9 => Class: 1</li><br>
+        <li>height = 75 AND age = 16 AND weight = 8 AND gender = 1 => Class: 1</li><br>
+        <li>height = 75 AND age = 16 AND weight = 10 AND gender = 0 => Class: 0</li><br>
+        <li>height = 75 AND age = 17 => Class: 1</li><br>
+        <li>height = 75 AND age = 18 => Class: 1</li><br>
+        <li>height = 75 AND age = 14 => Class: 0</li><br>
+        <li>height = 75 AND age = 19 => Class: 1</li><br>
+        <li>height = 75 AND age = 11 => Class: 0</li><br>
+        <li>height = 75 AND age = 21 => Class: 1</li><br>
+        <li>height = 71 AND age = 14 => Class: 1</li><br>
+        <li>height = 71 AND age = 8 => Class: 0</li><br>
+        <li>height = 71 AND age = 12 AND gender = 1 AND weight = 7 => Class: 1</li><br>
+        <li>height = 71 AND age = 12 AND gender = 1 AND weight = 8 => Class: 1</li><br>
+        <li>height = 71 AND age = 12 AND gender = 1 AND weight = 9 => Class: 1</li><br>
+        <li>height = 71 AND age = 12 AND gender = 0 AND weight = 9 => Class: 0</li><br>
+        <li>height = 71 AND age = 12 AND gender = 0 AND weight = 8 => Class: 1</li><br>
+        <li>height = 71 AND age = 4 => Class: 0</li><br>
+        <li>height = 71 AND age = 9 => Class: 0</li><br>
+        <li>height = 71 AND age = 15 => Class: 1</li><br>
+        <li>height = 71 AND age = 11 => Class: 0</li><br>
+        <li>height = 71 AND age = 7 => Class: 0</li><br>
+        <li>height = 71 AND age = 13 => Class: 1</li><br>
+        <li>height = 71 AND age = 17 => Class: 1</li><br>
+        <li>height = 71 AND age = 18 => Class: 1</li><br>
+        <li>height = 71 AND age = 10 => Class: 0</li><br>
+        <li>height = 69 AND age = 13 => Class: 1</li><br>
+        <li>height = 69 AND age = 9 => Class: 0</li><br>
+        <li>height = 69 AND age = 11 => Class: 1</li><br>
+        <li>height = 69 AND age = 8 => Class: 0</li><br>
+        <li>height = 69 AND age = 10 => Class: 0</li><br>
+        <li>height = 69 AND age = 7 => Class: 0</li><br>
+        <li>height = 69 AND age = 14 => Class: 1</li><br>
+        <li>height = 69 AND age = 12 => Class: 1</li><br>
+        <li>height = 69 AND age = 6 => Class: 0</li><br>
+        <li>height = 69 AND age = 21 => Class: 1</li><br>
+        <li>height = 69 AND age = 5 => Class: 0</li><br>
+        <li>height = 69 AND age = 20 => Class: 1</li><br>
+        <li>height = 63 AND age = 2 => Class: 0</li><br>
+        <li>height = 63 AND age = 4 => Class: 0</li><br>
+        <li>height = 63 AND age = 5 => Class: 0</li><br>
+        <li>height = 63 AND age = 3 => Class: 0</li><br>
+        <li>height = 63 AND age = 7 => Class: 1</li><br>
+        <li>height = 70 AND age = 9 => Class: 0</li><br>
+        <li>height = 70 AND age = 11 => Class: 0</li><br>
+        <li>height = 70 AND age = 10 => Class: 0</li><br>
+        <li>height = 70 AND age = 8 => Class: 0</li><br>
+        <li>height = 70 AND age = 12 AND gender = 0 AND weight = 8 => Class: 0</li><br>
+        <li>height = 70 AND age = 12 AND gender = 0 AND weight = 7 => Class: 0</li><br>
+        <li>height = 70 AND age = 12 AND gender = 1 AND weight = 7 => Class: 1</li><br>
+        <li>height = 70 AND age = 12 AND gender = 1 AND weight = 8 => Class: 1</li><br>
+        <li>height = 70 AND age = 14 => Class: 1</li><br>
+        <li>height = 70 AND age = 13 => Class: 1</li><br>
+        <li>height = 70 AND age = 7 => Class: 0</li><br>
+        <li>height = 70 AND age = 16 => Class: 1</li><br>
+        <li>height = 70 AND age = 6 => Class: 0</li><br>
+        <li>height = 70 AND age = 15 => Class: 1</li><br>
+        <li>height = 83 => Class: 0</li><br>
+        <li>height = 48 AND weight = 4 AND gender = 1 AND age = 0 => Class: 0</li><br>
+        <li>height = 48 AND weight = 4 AND gender = 0 AND age = 0 => Class: 0</li><br>
+        <li>height = 48 AND weight = 3 => Class: 0</li><br>
+        <li>height = 59 AND age = 4 AND weight = 5 => Class: 1</li><br>
+        <li>height = 59 AND age = 4 AND weight = 6 => Class: 0</li><br>
+        <li>height = 59 AND age = 3 => Class: 0</li><br>
+        <li>height = 59 AND age = 2 => Class: 0</li><br>
+        <li>height = 59 AND age = 1 => Class: 0</li><br>
+        <li>height = 59 AND age = 5 => Class: 1</li><br>
+        <li>height = 84 => Class: 0</li><br>
+        <li>height = 56 AND age = 1 => Class: 0</li><br>
+        <li>height = 56 AND age = 2 => Class: 0</li><br>
+        <li>height = 56 AND age = 0 => Class: 0</li><br>
+        <li>height = 56 AND age = 3 => Class: 1</li><br>
+        <li>height = 49 AND age = 0 => Class: 0</li><br>
+        <li>height = 49 AND age = 1 => Class: 1</li><br>
+        <li>height = 58 AND weight = 5 => Class: 0</li><br>
+        <li>height = 58 AND weight = 6 => Class: 0</li><br>
+        <li>height = 58 AND weight = 4 => Class: 1</li><br>
+        <li>height = 85 => Class: 0</li><br>
+        <li>height = 89 => Class: 0</li><br>
+        <li>height = 86 => Class: 0</li><br>
+        <li>height = 87 => Class: 0</li><br>
+        <li>height = 47 => Class: 0</li><br>
+        <li>height = 51 AND age = 0 => Class: 0</li><br>
+        <li>height = 51 AND age = 1 => Class: 1</li><br>
+        <li>height = 50 AND age = 0 => Class: 0</li><br>
+        <li>height = 50 AND age = 1 => Class: 1</li><br>
+        <li>height = 88 => Class: 0</li><br>
+        <li>height = 52 AND age = 1 AND gender = 1 AND weight = 4 => Class: 1</li><br>
+        <li>height = 52 AND age = 0 => Class: 0</li><br>
+        <li>height = 45 => Class: 1</li><br>
+        <li>height = 92 => Class: 0</li><br>
+        <li>height = 93 => Class: 0</li><br>
+        <li>height = 90 => Class: 0</li><br>
+        <li>height = 46 => Class: 0</li><br>
+        </div>
+
+        <!-- Seleksi Fitur -->
+        <h1 class="mt-4">K-Fold Cross Validation & Confusion Matrix</h1>
+
+        <!-- Hasil Evaluasi Model -->
+        <h2 class="mt-4">Hasil K-Fold Cross Validation</h2>
+        <div class="table-container-kfold" style="width: 90%; margin: 0 auto;">
+            <table id="kfold">
+                <thead>
+                    <tr>
+                        <th>Iteration</th>
+                        <th>TP</th>
+                        <th>TN</th>
+                        <th>FP</th>
+                        <th>FN</th>
+                        <th>Accuracy</th>
+                        <th>Precision</th>
+                        <th>Recall</th>
+                        <th>F1-Score</th>
+                        <th>MCC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="mt-4">Agregasi K-Fold Cross Validation</h2>
+        <div class="table-container-ak">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Accuracy</th>
+                        <th>Precision</th>
+                        <th>Recall</th>
+                        <th>F1-Score</th>
+                        <th>MCC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0.94403</td>
+                        <td>0.94542</td>
+                        <td>0.94403</td>
+                        <td>0.94395</td>
+                        <td>0.88869</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <h2 class="mt-4">Confusion Matrix</h2>
+        <img src="../static/img/c45/cm_c45.png" alt="" class="center-image">
+
+        <h2 class="mt-4">Kurva ROC AUC</h2>
+        <img src="../static/img/c45/kurva_roc.png" alt="" class="center-image">
+
+
+<!-- Footer -->
+<div class="footer">
+    <p>Designed by Adjie Hari Fajar</p>
+</div>
+<script>
+document.getElementById('hamburger').addEventListener('click', function () {
+    var nav = document.getElementById('navLinks');
+    nav.classList.toggle('show');
+});
+
+        // Path to your CSV file
+        const csvFilePath = '../static/data/hasil_kfold_c45.csv'; // Adjust this path if your CSV is elsewhere
+        let predictionData = []; // To store the parsed CSV data
+
+        // --- Function to fetch and parse CSV ---
+        async function loadCSVData() {
+            try {
+                const response = await fetch(csvFilePath);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const csvText = await response.text();
+                predictionData = parseCSV(csvText);
+                renderTable(predictionData);
+            } catch (error) {
+                console.error("Error loading or parsing CSV:", error);
+                tableBody.innerHTML = '<tr><td colspan="10">Gagal memuat data. Pastikan file CSV tersedia.</td></tr>';
+            }
+        }
+
+        function parseCSV(csvString) {
+            const lines = csvString.trim().split('\n');
+            const headers = lines[0].split(',').map(header => header.trim()); // Trim headers
+            const data = [];
+
+            for (let i = 1; i < lines.length; i++) {
+                const values = lines[i].split(',').map(value => value.trim()); // Trim values
+                if (values.length === headers.length) {
+                    const row = {};
+                    headers.forEach((header, index) => {
+                        row[header] = values[index];
+                    });
+                    data.push(row);
+                } else {
+                    console.warn(`Skipping malformed row ${i + 1}: ${lines[i]}`);
+                }
+            }
+            return data;
+        }
+
+function renderTable(data) {
+    const tableBody = document.querySelector('#kfold tbody'); // Pastikan ini ada
+    tableBody.innerHTML = ''; // Clear existing rows
+
+    if (data.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="10">Tidak ada data prediksi.</td></tr>';
+        return;
+    }
+
+    data.forEach((row) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${row["Iteration"]}</td>
+            <td>${row["TP"] || ''}</td>
+            <td>${row["TN"] || ''}</td>
+            <td>${row["FP"] || ''}</td>
+            <td>${row["FN"] || ''}</td>
+            <td>${row["Accuracy"] || ''}</td>
+            <td>${row["Precision"] || ''}</td>
+            <td>${row["Recall"] || ''}</td>
+            <td>${row["F1-Score"] || ''}</td>
+            <td>${row["MCC"] || ''}</td>
+        `;
+        tableBody.appendChild(tr);
+    });
+}
+
+loadCSVData();
+
+</script>
+</body>
+
+</html>

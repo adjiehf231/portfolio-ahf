@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prediksi Stunting</title>
+    <link rel="stylesheet" href="../static/css/style_c45.css">
+</head>
+<body>
+    <!-- Hamburger Menu Button -->
+    <div class="hamburger" id="hamburger">&#9776;</div>
+
+    <!-- Navigation Links -->
+    <div class="navigation" id="navLinks">
+        <a href="../index.html">Kembali Ke Portofolio</a>
+        <a href="index_c45.html">Beranda</a>
+        <a href="prediksi_c45.html">Prediksi Stunting</a>
+        <a href="informasi_c45.html">Informasi Model C45</a>
+        <a href="dp_c45.html">Data Prediksi</a>
+    </div>
+
+    <h1>Prediksi Stunting</h1>
+    <form method="post" action="#">
+        <label for="name">Nama:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label for="name">Alamat:</label><br>
+        <input type="text" name="address" required><br><br>
+
+        <label for="name">Nama Orang Tua:</label><br>
+        <input type="text" name="parent" required><br><br>
+
+        <label for="gender">Jenis Kelamin:</label><br>
+        <select name="gender" required>
+            <option value="0">Laki-laki</option>
+            <option value="1">Perempuan</option>
+        </select><br><br>
+
+        <label for="age">Usia (Bulan 0.1-24.0):</label><br>
+        <input type="number" name="age" required step="0.01"><br><br>
+
+        <label for="weight">Berat Badan (Kg 0.1-20.0):</label><br>
+        <input type="text" name="weight" required step="0.01"><br><br>
+
+        <label for="height">Tinggi Badan (Cm 0.1-100.0):</label><br>
+        <input type="text" name="height" required step="0.01"><br><br>
+
+        <button class="btn-prediksi" >Prediksi</button>
+    </form>
+
+        <h2>Hasil Prediksi:</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Alamat</th>
+                <th>Nama Orang Tua</th>
+                <th>Jenis Kelamin</th>
+                <th>Usia (Bulan)</th>
+                <th>Berat Badan (KG)</th>
+                <th>Tinggi Badan (CM)</th>
+                <th>Prediksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>RISKI PRASETIO</td>
+                <td>Bumiayu Brebes</td>
+                <td>SOFYAN</td>
+                <td>Laki-laki</td>
+                <td>4</td>
+                <td>4</td>
+                <td>45</td>
+                <td>Stunting</td>
+            </tr>   
+        </tbody>
+        </table>
+    </div>
+
+        <!-- Solusi untuk bayi stunting usia <6 bulan -->
+        <h2>Solusi untuk bayi stunting usia <6 bulan:</h2>
+        <table class="solusi">
+            <tr>
+                <td>
+                    Solusi balita yang terkena stunting dengan usia dibawah 6 bulan: Beri ASI Eksklusif, bunda mengkonsumsi makanan sehat dan bergizi, imunisasi, selalu konsultasi kebidan/dokter secara berkala, jaga kebersihan, dan menerapkan perilaku hidup bersih dan sehat (PHBS).
+                </td>
+            </tr>
+        </table>
+
+        <!-- Solusi untuk bayi stunting usia >6 bulan -->
+        <h2>Solusi untuk bayi stunting usia >6 bulan:</h2>
+        <table class="solusi">
+            <tr>
+                <td>
+                    Solusi balita yang terkena stunting dengan usia diatas 6 bulan: Selain pemberian ASI eksklusif, dampingi dengan MPASI lengkap dan bergizi, pemberian asupan gizi hewani, imunisasi, selalu konsultasi kebidan/dokter secara berkala, jaga kebersihan rumah, memperbaiki sanitasi, dan menerapkan perilaku hidup bersih dan sehat (PHBS).
+                </td>
+            </tr>
+        </table>
+
+        <!-- Solusi jika bayi tidak terkena stunting usia <6 bulan -->
+        <h2>Solusi jika bayi tidak terkena stunting usia <6 bulan:</h2>
+        <table class="solusi">
+            <tr>
+                <td>
+                    Solusi jika balita yang tidak terkena stunting usia dibawah 6 bulan: Pemberian ASI pada anak sampai usia 2 tahun, bunda konsumsi makanan dan minuman yang mengandung gizi dan nutrisi yang dibutuhkan balita, jaga pola hidup sehat pada anak, bunda, dan rumah, perbaiki sanitasi dirumah jika diperlukan.
+                </td>
+            </tr>
+        </table>
+
+        <!-- Solusi jika bayi tidak terkena stunting usia >6 bulan -->
+        <h2>Solusi jika bayi tidak terkena stunting usia >6 bulan:</h2>
+        <table class="solusi">
+            <tr>
+                <td>
+                    Solusi jika balita yang tidak terkena stunting usia diatas 6 bulan: Pemberian ASI pada anak sampai usia 2 tahun, bunda konsumsi makanan dan minuman yang mengandung gizi dan nutrisi yang dibutuhkan balita, jaga pola hidup sehat pada anak, bunda, dan rumah, pemberian MPASI jika diperlukan, perbaiki sanitasi dirumah jika diperlukan.
+                </td>
+            </tr>
+        </table>
+
+<!-- Footer -->
+<div class="footer">
+    <p>Designed by Adjie Hari Fajar</p>
+</div>
+<script>
+document.getElementById('hamburger').addEventListener('click', function () {
+    var nav = document.getElementById('navLinks');
+    nav.classList.toggle('show');
+});
+</script>
+</body>
+</html>

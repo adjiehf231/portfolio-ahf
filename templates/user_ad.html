@@ -1,0 +1,221 @@
+<!-- templates/user.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manajemen Pengguna</title>
+    <link rel="stylesheet" href="../static/css/style_ad.css">
+    <style>
+        table, th, td { border: 1px solid #ccc; border-collapse: collapse; padding: 8px; }
+        th { background-color: #f0f0f0; }
+        .hidden { display: none; }
+    </style>
+    
+</head>
+<body>
+    <div class="header">
+        <button id="toggleSidebar" class="toggle-btn">☰</button>
+        <div class="user-info">
+            <img src="../static/img/user.png" alt="User Logo" class="user-logo">
+            <span class="username">Adjie</span>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="../index.html">🏠 Kembali Ke Portofolio</a> </li>
+            <li><a href="index_ad.html">Dashboard</a></li>
+            <li> <a href="analisis_ad.html">Analisis</a></li>
+            <li> <a href="data_ad.html">Data</a></li>
+            <li> <a href="user_ad.html">User</a></li>
+            <li> <a href="login_ad.html">Log Out</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <h1 class="h1-content">Manajemen Pengguna</h1>
+            <div class="table-user">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Level</th>
+                            <th>Created At</th>
+                            <th>Updated At</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>adm-001</td>
+                            <td>admin25</td>
+                            <td>Admin</td>
+                            <td>2025/02/05</td>
+                            <td>-</td>
+                            <td>
+                            <a href="#" onclick="return confirm('Yakin ingin hapus?')">Hapus</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        <div class="botton-user">
+        <button type="user" onclick="showAddForm()">Add User</button>
+        <button type="user" onclick="showEditForm()">Edit User</button>
+        </div>
+
+        <div class="form-user hidden">
+            <form>
+                <input type="hidden" name="action" value="add">
+                <h2>Tambah User Baru</h2>
+                <label>Username:</label>
+                <input type="text" name="username" required>
+
+                <label>Password:</label>
+                <div class="password-wrapper">
+                    <input type="password" name="password" id="password-field" required>
+                    <button type="button" onclick="togglePassword()">👁️</button>
+                </div>
+
+                <label>Level:</label>
+                <select name="level" required>
+                    <option value="">Pilih Level</option>
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                </select>
+
+                <button>Save</button>
+            </form>
+        </div>
+
+        <!-- Form Edit User -->
+        <div class="form-user hidden" id="formEditUser">
+            <form>
+                <input type="hidden" name="action" value="update">
+                <h2>Edit User</h2>
+
+                <label>ID User:</label>
+                <select name="id_user" id="edit-id-user" onchange="loadUserData(this.value)" required>
+                    <option value="">Pilih ID</option>
+                    {% for user in users %}
+                        <option value="{{ user[0] }}">{{ user[0] }}</option>
+                    {% endfor %}
+                </select>
+
+                <label>Username:</label>
+                <input type="text" name="username" id="edit-username" required>
+
+                <label>Password:</label>
+                <div class="password-wrapper">
+                    <input type="password" name="password" id="edit-password" required>
+                    <button type="button" onclick="toggleEditPassword()">👁️</button>
+                </div>
+
+                <label>Level:</label>
+                <select name="level" id="edit-level" required>
+                    <option value="">Pilih Level</option>
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                </select>
+
+                <button>Update</button>
+            </form>
+        </div>
+    </div>
+
+    <footer id="mainFooter" class="footer">
+        <p>
+            <i class="fas fa-phone"></i> 📞 
+            <a href="https://wa.me/6282327282220" target="_blank">
+                WA: 082327282220
+            </a>
+        </p>
+        <p>
+            <i class="fas fa-envelope"></i> 📧 
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=adjieharifajar2301@gmail.com" target="_blank">
+                Email: adjieharifajar2301@gmail.com
+            </a>
+        </p>
+        <p>
+            <i class="fab fa-instagram"></i> 📸 
+            <a href="https://instagram.com/bang_jie231" target="_blank">
+                IG: @bang_jie231
+            </a>
+        </p>
+        <p>&copy; 2025 BY Adjie Hari Fajar. All Rights Reserved.</p>
+    </footer>
+
+
+    <script>
+        const toggleBtn = document.getElementById('toggleSidebar');
+        const sidebar = document.querySelector('.sidebar');
+        const mainContent = document.querySelector('.main-content');
+        const footer = document.getElementById('mainFooter');
+
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+            mainContent.classList.toggle('shrinked');
+
+            // Toggle footer width
+            if (sidebar.classList.contains('hidden')) {
+                footer.classList.remove('shrinked');
+                footer.classList.add('full');
+            } else {
+                footer.classList.remove('full');
+                footer.classList.add('shrinked');
+            }
+        });
+
+        function togglePassword() {
+            const pwField = document.getElementById('password-field');
+            pwField.type = pwField.type === 'password' ? 'text' : 'password';
+        }
+
+        function showAddForm() {
+            const formUser = document.querySelector('.form-user');
+            formUser.classList.remove('hidden');
+            document.getElementById('formAddUser').classList.remove('hidden');
+        }
+
+        function loadUserData(idUser) {
+            if (!idUser) return;
+
+            fetch(`/get_user/${idUser}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        alert(data.error);
+                    } else {
+                        document.getElementById('edit-username').value = data.username;
+                        document.getElementById('edit-password').value = data.password;
+                        document.getElementById('edit-level').value = data.level;
+                    }
+                })
+                .catch(error => console.error('Error fetching user data:', error));
+        }
+
+        function showAddForm() {
+            document.querySelectorAll('.form-user').forEach(f => f.classList.add('hidden'));
+            document.querySelector('.form-user:not(#formEditUser)').classList.remove('hidden');
+        }
+
+
+        function toggleEditPassword() {
+            const pwField = document.getElementById('edit-password');
+            pwField.type = pwField.type === 'password' ? 'text' : 'password';
+        }
+        function showEditForm() {
+            document.querySelectorAll('.form-user').forEach(f => f.classList.add('hidden'));
+            document.getElementById('formEditUser').classList.remove('hidden');
+        }
+
+        function togglePassword() {
+            const field = document.getElementById("password-field");
+            field.type = field.type === "password" ? "text" : "password";
+        }
+    </script>
+
+</body>
+</html>

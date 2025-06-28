@@ -1,0 +1,16 @@
+Fitur,Probabilitas
+perimeter_worst,0.4771
+area_worst,0.4643
+radius_worst,0.4548
+concave points_mean,0.4396
+concave points_worst,0.4375
+perimeter_mean,0.4027
+concavity_mean,0.3747
+radius_mean,0.3715
+area_mean,0.362
+area_se,0.3408
+concavity_worst,0.3177
+perimeter_se,0.2768
+radius_se,0.2478
+compactness_worst,0.2244
+compactness_mean,0.2122

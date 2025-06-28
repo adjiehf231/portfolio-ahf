@@ -1,0 +1,16 @@
+Fitur,Nilai Input
+perimeter_worst,184.00
+area_worst,2019.00
+radius_worst,28.00
+concave points_mean,0.14
+concave points_worst,0.26
+perimeter_mean,130.00
+concavity_mean,0.30
+radius_mean,17.99
+area_mean,1001.00
+area_se,154.40
+concavity_worst,0.71
+perimeter_se,8.58
+radius_se,1.09
+compactness_worst,0.42
+compactness_mean,0.86

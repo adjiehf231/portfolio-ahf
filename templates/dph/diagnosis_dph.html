@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/style_dph.css">
+    <title>Diagnosis Penyakit</title>
+    <style>
+        .gejala ul {
+            display: none;
+        .gejala li {
+                display: none;
+        }
+        }
+    </style>
+    
+        <nav class="navigation">
+            <a href="../../index.html">Kembali Ke Portofolio</a>
+            <a href="index_dph.html">BERANDA</a>
+            <a href="diagnosis_dph.html">DIAGNOSIS</a>
+            <a href="data_dph.html">BASIS PENGETAHUAN</a>
+        </nav>
+</head>
+
+<body>
+    <h1>Diagnosis Penyakit Tumbuhan Hortikultura</h1>
+    <form method="post" action="/diagnosis">
+        <label for="tanaman">Pilih Tanaman:</label>
+        <select name="tanaman" id="tanaman" onchange="showSymptoms()">
+            <option value="">Silahkan Pilih Tanaman</option>
+            <option value="cabai">Cabai</option>
+            <option value="kentang">Kentang</option>
+            <option value="wortel">Wortel</option>
+        </select>
+        <br>
+        <div id="gejala-container">
+            <label for="gejala">Pilih Gejala:</label><br>
+            <ul class="gejala">
+                <li><input type="checkbox" name="gejala"> (Cabai) Daun mengalami kelayuan</li>
+                <li><input type="checkbox" name="gejala"> (Cabai) Daun menguning dan menjalar ke ranting</li>
+                <li><input type="checkbox" name="gejala"> (Cabai) Warna jaringan akar dan batang menjadi coklat</li>
+                <li><input type="checkbox" name="gejala"> (Cabai) Layu secara tiba-tiba</li>
+                <li><input type="checkbox" name="gejala"> (Cabai) Semua daun layu tetapi tidak berubah warna</li>
+                <li><input type="checkbox" name="gejala"> (Cabai) Jaringan veskuler dari batang bagian bawah akar coklat</li>
+                <li><input type="checkbox" name="gejala"> (Cabai) Munculnya bercak pada buah yang agak mengkilap</li>
+                <li><input type="checkbox" name="gejala"> (Cabai) Seluruh buah keriput dan mengering</li>
+                <li><input type="checkbox" name="gejala"> (Cabai) Warna kulit buah seperti jerami padi</li>
+                <li><input type="checkbox" name="gejala"> (Cabai) Pucuk daun berubah menjadi kuning jelas</li>
+                <li><input type="checkbox" name="gejala"> (Cabai) Tulang daun menebal dan daun menggulung ke atas</li>
+                <li><input type="checkbox" name="gejala"> (Cabai) Tanaman kerdil dan tidak berbuah</li>
+                <li><input type="checkbox" name="gejala"> (Cabai) Muncul bercak bulat berwarna coklat pada daun dan kering</li>
+                <li><input type="checkbox" name="gejala"> (Cabai) Bercak berwarna pucat putih dengan warna tepi lebih tua</li>
+                <li><input type="checkbox" name="gejala"> (Cabai) Terdapat lubang pada bercak tua</li>
+                <li><input type="checkbox" name="gejala"> (Kentang) Timbul bercak-bercak basah pada bagian tepi daun atau tengah daun</li>
+                <li><input type="checkbox" name="gejala"> (Kentang) Warna bercak-bercak berubah menjadi coklat sampai hitam, selanjutnya daun akan membusuk dan mati</li>
+                <li><input type="checkbox" name="gejala"> (Kentang) Daun-daun menjadi layu yang dimulai dari daun muda atau pucuk, dan daun bagian bawah menguning</li>
+                <li><input type="checkbox" name="gejala"> (Kentang) Pembuluh pada pangkal batang berwarna coklat, dan bila ditekan akan keluar lendir yang berwana abu-abu keruh</li>
+                <li><input type="checkbox" name="gejala"> (Kentang) Penyakit sampai ke umbi dengan gejala bercak yang berwarna coklat sampai hitam pada bagian ujung umbi</li>
+                <li><input type="checkbox" name="gejala"> (Kentang) Daun menguning dan menggulung lalu layu dan kering</li>
+                <li><input type="checkbox" name="gejala"> (Kentang) Pada bagian umbi tedapat bercakbercak berwana coklat</li>
+                <li><input type="checkbox" name="gejala"> (Kentang) Infeksi akan menyebabkan akar dan umbi mudah busuk</li>
+                <li><input type="checkbox" name="gejala"> (Kentang) Daun-daun yang sakit menggulung ke atas</li>
+                <li><input type="checkbox" name="gejala"> (Kentang) Dari tepi ke arah ibu tulang, kadangkadang menyerupai tabung, jika di pegang daun terasa lebih kaku</li>
+                <li><input type="checkbox" name="gejala"> (Kentang) Secara keseluruhan warna daun tanaman sakit lebih pucat, kurus, dan tegak dari pada daun sehat, dan umbi yang dihasilkan berukuran lebih kecil</li>
+                <li><input type="checkbox" name="gejala"> (Kentang) Daun terinfeksi berbercak kecil yang tersebar tidak teratur</li>
+                <li><input type="checkbox" name="gejala"> (Kentang) Daun berwarna coklat tua lalu meluas ke daun muda</li>
+                <li><input type="checkbox" name="gejala"> (Kentang) Permukaan kulit umbi berbercak gelap</li>
+                <li><input type="checkbox" name="gejala"> (Wortel) Umbi membusuk</li>
+                <li><input type="checkbox" name="gejala"> (Wortel) Warna umbi pucat</li>
+                <li><input type="checkbox" name="gejala"> (Wortel) Tanaman menjadi kerdil</li>
+                <li><input type="checkbox" name="gejala"> (Wortel) Kecacatan pada wortel</li>
+                <li><input type="checkbox" name="gejala"> (Wortel) Terdapat bercak-bercak</li>
+                <li><input type="checkbox" name="gejala"> (Wortel) Terdapat bintik-bintik</li>
+                <li><input type="checkbox" name="gejala"> (Wortel) Daun mengkriting</li>
+                <li><input type="checkbox" name="gejala"> (Wortel) Daun berlubang</li>
+                <li><input type="checkbox" name="gejala"> (Wortel) Umbian rusak</li>
+                <li><input type="checkbox" name="gejala"> (Wortel) Tanah menguning</li>
+                <li><input type="checkbox" name="gejala"> (Wortel) Daun tampak layu</li>
+                <li><input type="checkbox" name="gejala"> (Wortel) Daun kering</li>
+                <li><input type="checkbox" name="gejala"> (Wortel) Warna umbi pucat</li>
+                <li><input type="checkbox" name="gejala"> (Wortel) Pucuk menguning</li>
+            </ul>
+        </div>
+        
+        <br>
+        <button type="submit">Diagnosis</button>
+    </form>
+
+            <div class="diagnosis-result">
+                <h2>Tanaman: Cabai</h2>
+                <h3>Gejala:</h3>
+                <ul class="gejala">
+                    <li>(Cabai) Daun mengalami kelayuan</li>
+                    <li>(Cabai) Daun menguning dan menjalar ke ranting</li>
+                    <li>(Cabai) Warna jaringan akar dan batang menjadi coklat</li>
+                </ul>
+                <h3>Penyakit:</h3>
+                <ul class="penyakit">
+                        <li>P01 - Layu Fusarium (Fusarium Oxysporum. Sp)</li>
+                </ul>
+
+                <h3>Solusi:</h3>
+                <ul class="solusi">
+                    <li>Sanitasi dengan mencabut dan memusnahkan tanaman terserang</li>
+                </ul>
+            </div>
+
+    <script>
+        function showSymptoms() {
+            var selectedTanaman = document.getElementById("tanaman").value;
+            var gejalaList = document.getElementById("gejala-list");
+    
+            // Reset the display for all symptoms
+            gejalaList.style.display = "none";
+            var gejalaItems = gejalaList.getElementsByTagName("li");
+            for (var i = 0; i < gejalaItems.length; i++) {
+                gejalaItems[i].style.display = "none";
+            }
+    
+            // Show symptoms based on the selected plant
+            if (selectedTanaman) {
+                var startCode, endCode;
+                if (selectedTanaman === "cabai") {
+                    startCode = "G01";
+                    endCode = "G15";
+                } else if (selectedTanaman === "kentang") {
+                    startCode = "G16";
+                    endCode = "G29";
+                } else if (selectedTanaman === "wortel") {
+                    startCode = "G30";
+                    endCode = "G43";
+                }
+    
+                // Display selected symptoms
+                for (var i = 0; i < gejalaItems.length; i++) {
+                    var gejalaCode = gejalaItems[i].getElementsByTagName("input")[0].value;
+                    if (gejalaCode >= startCode && gejalaCode <= endCode) {
+                        gejalaItems[i].style.display = "block";
+                    }
+                }
+    
+                // Show the symptoms list
+                gejalaList.style.display = "block";
+            }
+        }
+    </script>
+    
+    
+</body>
+
+</html>

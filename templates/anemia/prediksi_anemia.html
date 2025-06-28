@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Status Gizi Anak</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/style_anemia.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Hamburger Menu -->
+        <button id="hamburger">&#9776;</button>
+
+        <nav class="navigation">
+            <a href="../../index.html">🏠 Kembali Ke Portofolio</a>
+            <a href="index_anemia.html">🏠 Beranda</a>
+            <a href="prediksi_anemia.html">📊 Prediksi Anemia</a>
+            <a href="informasi_anemia.html">📊 Informasi Model</a>
+        </nav>
+
+        <h1 class="text-center">Prediksi Anemia</h1>
+
+        <form action="/prediksi" method="POST" class="p-4 rounded shadow-sm" style="background-color: rgba(255,255,255,0.1);">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nama</label>
+                <input type="text" name="name" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="addres" class="form-label">Alamat</label>
+                <input type="text" name="addres" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="gender" class="form-label">Jenis Kelamin</label>
+                <select name="gender" class="form-select" required>
+                    <option value="0">Laki-laki</option>
+                    <option value="1">Perempuan</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="hemog" class="form-label">Hemoglobin</label>
+                <input type="number" name="hemog" class="form-control" required step="0.01">
+            </div>
+
+            <div class="mb-4">
+                <label for="mch" class="form-label">MCH</label>
+                <input type="number" name="mch" class="form-control" required step="0.01">
+            </div>
+
+            <div class="mb-4">
+                <label for="mchc" class="form-label">MCHC</label>
+                <input type="number" name="mchc" class="form-control" required step="0.01">
+            </div>
+
+            <div class="mb-4">
+                <label for="mcv" class="form-label">MCV</label>
+                <input type="number" name="mcv" class="form-control" required step="0.01">
+            </div>
+
+            <div class="text-end">
+                <button type="submit" class="btn btn-primary px-4 py-2">🔍 Prediksi</button>
+            </div>
+        </form>
+
+        <div class="card mt-4 shadow-lg" style="background-color: rgba(255, 255, 255, 0.9); border-radius: 15px;">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4" style="color: #004b8f;">📋 Hasil Prediksi Anemia</h2>
+                
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item"><strong>Name:</strong>Jokowi</li>
+                    <li class="list-group-item"><strong>Addres:</strong>Bumiau</li>
+                    <li class="list-group-item"><strong>Jenis Kelamin:</strong>Laki-laki</li>
+                    <li class="list-group-item"><strong>MCH:</strong>17</li>
+                    <li class="list-group-item"><strong>MCHC:</strong>17</li>
+                    <li class="list-group-item"><strong>MCV:</strong>74</li>
+                </ul>
+        
+                <div class="text-center mt-4">
+                      <span class="badge bg-warning text-dark fs-5 px-4 py-2">Prediksi <strong>Anemia</strong> | Akurasi Model:<strong>0.9920</strong></span>
+                </div>
+                
+            </div>
+    </div>
+    <script src="../../static/js/script_anemia.js"></script>
+</body>
+</html>

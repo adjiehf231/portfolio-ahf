@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Analisis</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/style_kp.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Hamburger Menu -->
+        <button id="hamburger">&#9776;</button>
+
+        <nav class="navigation">
+            <a href="../../index.html">🏠 Kembali Ke Portofolio</a>
+            <a href="index_kp.html">🏠 Beranda</a>
+            <a href="prediksi_kp.html">📊 Prediksi Kangker Payudara</a>
+            <a href="informasi_kp.html">📊 Informasi Model</a>
+        </nav>
+
+        <h1 class="text-center mt-4">📊 Informasi Analisis Data Model SVM</h1>
+
+        <!-- Seleksi Fitur -->
+        <h1 class="mt-4">⚙️ Seleksi Fitur dan Preprocessing Dataset</h1>
+        
+        <h2 class="mt-4">🔍 Probabilitas Setiap Atribut</h2>
+        <table class="table table-hover table-bordered" id="fitur-prob-1">
+            <thead class="table-dark">
+                <tr>
+                    <th>Fitur</th>
+                    <th>Probabilitas</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <h2 class="mt-4">🌟 Fitur Terpilih</h2>
+        <table class="table table-hover table-bordered" id="fitur-prob-2">
+            <thead class="table-primary">
+                <tr>
+                    <th>Fitur</th>
+                    <th>Probabilitas</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <h2 class="mt-4">🔄 Transformasi Data</h2>
+        <table class="table table-hover table-bordered text-center">
+            <thead class="table-warning">
+                <tr>
+                    <th colspan="2">Diagnosis</th>
+                </tr>
+                <tr>
+                    <th>Sebelum</th>
+                    <th>Sesudah</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>B (Benign)</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>M (Malignan)</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+        
+
+
+        <!-- Seleksi Fitur -->
+        <h1 class="mt-4">⚙️ K-Fold Cross Validation & Confusion Matrix</h1>
+
+        <!-- Hasil Evaluasi Model -->
+        <h2 class="mt-4">📈 Hasil K-Fold Cross Validation</h2>
+
+        <table class="table table-hover table-bordered text-center" id="kfold">
+            <thead class="table-success">
+                <tr>
+                    <th>Fold</th>
+                    <th>TP</th>
+                    <th>FP</th>
+                    <th>FN</th>
+                    <th>TN</th>
+                    <th>Akurasi</th>
+                    <th>Presisi</th>
+                    <th>Recall</th>
+                    <th>F1-Score</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <h2 class="mt-4">🏆 Best Model dari K-Fold</h2>
+        <table class="table table-hover table-bordered text-center">
+            <thead class="table-danger">
+                <tr>
+                    <th>Iterasi (Fold)</th>
+                    <th>TP</th>
+                    <th>FP</th>
+                    <th>FN</th>
+                    <th>TN</th>
+                    <th>Akurasi</th>
+                    <th>Presisi</th>
+                    <th>Recall</th>
+                    <th>F1-Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10</td>
+                    <td>20</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>35</td>
+                    <td>0.9821</td>
+                    <td>1.0000</td>
+                    <td>0.9524</td>
+                    <td>0.9756</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Confusion Matrix -->
+        <h2 class="mt-4">🎯 Confusion Matrix</h2>
+        <div class="text-center">
+            <img class="confusion-matrix" src="../../static/img/dd/cm_best_fold.png" alt="Confusion Matrix">
+        </div>
+
+        <h2 class="mt-4">📊 Agregasi K-Fold Cross Validation</h2>
+        <table class="table table-hover table-bordered text-center">
+            <thead class="table-info">
+                <tr>
+                    <th>Rata-rata Akurasi</th>
+                    <th>Rata-rata Presisi</th>
+                    <th>Rata-rata Recall</th>
+                    <th>Rata-rata F1-Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0.9421</td>
+                    <td>0.9357</td>
+                    <td>0.9102</td>
+                    <td>0.9210</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+        <script src="../../static/js/script_kp.js"></script>
+</body>
+</html>

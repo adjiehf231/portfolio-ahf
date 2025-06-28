@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Klasifikasi Pendonor Darah</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/style_dd.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">Donor<span> Darah</span></div>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+
+        <!-- NAV MENU -->
+        <nav class="nav" id="navMenu">
+            <a href="../../index.html">Kembali Ke Portofolio</a>
+            <a href="home_dd.html">Home</a>
+            <a href="prediksi_dd.html">Prediksi</a>
+            <a href="informasi_model_dd.html">Informasi</a>
+        </nav>
+    </header>
+
+    <!-- KONTEN UTAMA -->
+    <main class="container">
+
+    <div class="info-section">
+        <h2 class="info-title">Tentang Model Prediksi Ini</h2>
+        <div class="info-cards-prediction">
+            <div class="card-p info-card">
+                <h3>Data yang Dibutuhkan untuk Prediksi</h3>
+                <p>Untuk mendapatkan prediksi yang akurat, model memerlukan data kesehatan dan demografi tertentu dari calon pendonor. Semakin lengkap dan akurat data yang Anda masukkan, semakin baik hasil prediksinya. Data yang dibutuhkan meliputi:</p>
+                <ul>
+                    <li><strong>Nama:</strong> Untuk identifikasi pribadi (tidak digunakan dalam perhitungan prediksi).</li>
+                    <li><strong>Alamat:</strong> Untuk informasi demografi (tidak digunakan dalam perhitungan prediksi).</li>
+                    <li><strong>Jenis Kelamin:</strong> Faktor penting dalam beberapa kriteria kesehatan.</li>
+                    <li><strong>Usia (Tahun):</strong> Batasan usia adalah kriteria kunci kelayakan.</li>
+                    <li><strong>Berat Badan (KG):</strong> Persyaratan berat badan minimum.</li>
+                    <li><strong>Sistole (Tekanan Darah Atas):</strong> Indikator kesehatan kardiovaskular.</li>
+                    <li><strong>Diastole (Tekanan Darah Bawah):</strong> Indikator kesehatan kardiovaskular.</li>
+                    <li><strong>Hemoglobin (HB):</strong> Tingkat HB yang cukup adalah syarat mutlak.</li>
+                    <li><strong>Nadi:</strong> Detak jantung yang stabil dan normal.</li>
+                </ul>
+                <p>Pastikan Anda memasukkan informasi yang benar dan terbaru untuk hasil prediksi yang paling relevan.</p>
+            </div>
+
+            <div class="card-p info-card">
+                <h3>Penting untuk Diketahui!</h3>
+                <p>Prediksi dari model ini **bukanlah diagnosis medis resmi** atau pengganti pemeriksaan oleh tenaga kesehatan profesional. Ini adalah alat bantu yang menyediakan **indikasi awal** berdasarkan data yang Anda berikan.</p>
+                <ul>
+                    <li>Hasil prediksi tidak menjamin kelayakan atau ketidaklayakan definitif untuk donor darah.</li>
+                    <li>Selalu konsultasikan dengan dokter atau petugas medis di pusat donor darah untuk evaluasi kesehatan yang menyeluruh.</li>
+                    <li>Ada banyak faktor lain yang mungkin memengaruhi kelayakan donor darah (riwayat penyakit, obat-obatan, kondisi khusus) yang mungkin tidak tercakup dalam model ini.</li>
+                </ul>
+                <p>Gunakan informasi ini sebagai panduan awal dan dasar untuk diskusi lebih lanjut dengan profesional medis.</p>
+            </div>
+        </div>
+    </div>
+
+<div class="prediksi-container">
+    <h2 class="prediksi-title">Form Prediksi Pendonor <span> Darah</span></h2>
+
+    <!-- FORM -->
+    <form class="prediksi-form">
+        <div class="form-group">
+            <label>Nama</label>
+            <input type="text" name="nama" required>
+        </div>
+
+        <div class="form-group">
+            <label>Alamat</label>
+            <textarea name="alamat" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Jenis Kelamin</label>
+            <select name="jenis_kelamin" required>
+                <option value="0">Laki-laki</option>
+                <option value="1">Perempuan</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Usia (Tahun)</label>
+            <input type="number" name="usia" required>
+        </div>
+
+        <div class="form-group">
+            <label>Berat Badan (KG)</label>
+            <input type="number" name="berat_badan" step="0.1" required>
+        </div>
+
+        <div class="form-group">
+            <label>Sistole</label>
+            <input type="number" name="sistole" required>
+        </div>
+
+        <div class="form-group">
+            <label>Diastole</label>
+            <input type="number" name="diastole" required>
+        </div>
+
+        <div class="form-group">
+            <label>Hemoglobin (HB)</label>
+            <input type="number" name="hb" step="0.1" required>
+        </div>
+
+        <div class="form-group">
+            <label>Nadi</label>
+            <input type="number" name="nadi" required>
+        </div>
+
+        <button class="btn-prediksi">PREDIKSI</button>
+    </form>
+
+    <!-- HASIL -->
+        <div class="hasil-prediksi">
+            <h3>HASIL PREDIKSI</h3>
+            <table class="hasil-table">
+                <tr><th>Nama</th><td>Dodi Syahputera</td></tr>
+                <tr><th>Alamat</th><td>Bumiayu</td></tr>
+                <tr><th>Jenis Kelamin</th><td>Laki-laki</td></tr>
+                <tr><th>Usia</th><td>25 Tahun</td></tr>
+                <tr><th>Berat Badan</th><td>50 kg</td></tr>
+                <tr><th>Sistole</th><td>132</td></tr>
+                <tr><th>Diastole</th><td>74</td></tr>
+                <tr><th>Hemoglobin</th><td>13</td></tr>
+                <tr><th>Nadi</th><td>67</td></tr>
+                <tr><th>Status</th><td><strong>{{ hasil.hasil_prediksi }}</strong></td>
+                </tr>
+            </table>
+        </div>
+</div>
+    </main>
+
+    <script src="../../static/js/script_dd.js"></script>
+</body>
+</html>

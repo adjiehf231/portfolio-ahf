@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <link rel="stylesheet" href="../static/css/style_ad.css">
+</head>
+<body>
+    <div class="header">
+        <button id="toggleSidebar" class="toggle-btn">☰</button>
+        <div class="user-info">
+            <img src="../static/img/user.png" alt="User Logo" class="user-logo">
+            <span class="username">Adjie</span>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="../index.html">🏠 Kembali Ke Portofolio</a> </li>
+            <li><a href="index_ad.html">Dashboard</a></li>
+            <li> <a href="analisis_ad.html">Analisis</a></li>
+            <li> <a href="data_ad.html">Data</a></li>
+            <li> <a href="user_ad.html">User</a></li>
+            <li> <a href="login_ad.html">Log Out</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <h1 class="h1-content">Data</h1>
+    <div>
+        <!-- Bagian info dataset tetap -->
+                <h3>Informasi Dataset</h3>
+                <div class ="content-data">
+                    <p><strong>Nama File:</strong> penjualan_shopee_2025.xlsx</p>
+                    <p><strong>Jumlah Data:</strong> 5000 baris x 9 kolom</p>
+                    <p><strong>Nama & Tipe Atribut:</strong></p>
+                    <ul>
+                        <li>Kota: object</li>
+                        <li>Produk: object</li>
+                        <li>Harga Satuan: int64</li>
+                        <li>Jumlah Pesanan: int64</li>
+                        <li>Tipe Pembayaran: object</li>
+                        <li>Tipe Pengiriman: object</li>
+                        <li>Rating Produk: float64</li>
+                        <li>Harga Total: int64</li>
+                    </ul>
+                </div>
+                    <h3>Workbook Dataset</h3>
+                    <div class="table-container">
+                        <table id="penjualan">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Kota</th>
+                                    <th>Produk</th>
+                                    <th>Harga Satuan</th>
+                                    <th>Jumlah Pesanan</th>
+                                    <th>Tipe Pembayaran</th>
+                                    <th>Tipe Pengiriman</th>
+                                    <th>Rating Produk</th>
+                                    <th>Harga Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+
+        <!-- Hanya form upload -->
+        <h3>Upload Dataset Baru</h3>
+        <div class="upload">
+            <p>Silahkan Upload:</p>
+            <form action="" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".csv, .xlsx" required>
+                <button>Upload</button>
+            </form>
+        </div>
+
+        </div>
+    </div>
+
+    <footer id="mainFooter" class="footer">
+        <p>
+            <i class="fas fa-phone"></i> 📞 
+            <a href="https://wa.me/6282327282220" target="_blank">
+                WA: 082327282220
+            </a>
+        </p>
+        <p>
+            <i class="fas fa-envelope"></i> 📧 
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=adjieharifajar2301@gmail.com" target="_blank">
+                Email: adjieharifajar2301@gmail.com
+            </a>
+        </p>
+        <p>
+            <i class="fab fa-instagram"></i> 📸 
+            <a href="https://instagram.com/bang_jie231" target="_blank">
+                IG: @bang_jie231
+            </a>
+        </p>
+        <p>&copy; 2025 BY Adjie Hari Fajar. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('toggleSidebar');
+        const sidebar = document.querySelector('.sidebar');
+        const mainContent = document.querySelector('.main-content');
+        const footer = document.getElementById('mainFooter');
+
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+            mainContent.classList.toggle('shrinked');
+
+            // Toggle footer width
+            if (sidebar.classList.contains('hidden')) {
+                footer.classList.remove('shrinked');
+                footer.classList.add('full');
+            } else {
+                footer.classList.remove('full');
+                footer.classList.add('shrinked');
+            }
+        });
+
+        // Path to your CSV file
+        const csvFilePath = '../static/data/penjualan_shopee_2025.csv'; // Adjust this path if your CSV is elsewhere
+        let penjualan = []; // To store the parsed CSV data
+
+        // --- Function to fetch and parse CSV ---
+        async function loadCSVData() {
+            try {
+                const response = await fetch(csvFilePath);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const csvText = await response.text();
+                penjualan = parseCSV(csvText);
+                renderTable(penjualan);
+            } catch (error) {
+                console.error("Error loading or parsing CSV/XLSX:", error);
+                tableBody.innerHTML = '<tr><td colspan="10">Gagal memuat data. Pastikan file CSV/XSLX tersedia.</td></tr>';
+            }
+        }
+
+        function parseCSV(csvString) {
+            const lines = csvString.trim().split('\n');
+            const headers = lines[0].split(',').map(header => header.trim()); // Trim headers
+            const data = [];
+
+            for (let i = 1; i < lines.length; i++) {
+                const values = lines[i].split(',').map(value => value.trim()); // Trim values
+                if (values.length === headers.length) {
+                    const row = {};
+                    headers.forEach((header, index) => {
+                        row[header] = values[index];
+                    });
+                    data.push(row);
+                } else {
+                    console.warn(`Skipping malformed row ${i + 1}: ${lines[i]}`);
+                }
+            }
+            return data;
+        }
+
+        function renderTable(data) {
+            const tableBody = document.querySelector('#penjualan tbody'); // Pastikan ini ada
+            tableBody.innerHTML = ''; // Clear existing rows
+
+            if (data.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="10">Tidak ada data prediksi.</td></tr>';
+                return;
+            }
+
+            data.forEach((row) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${row["No"]}</td>
+                    <td>${row["Kota"] || ''}</td>
+                    <td>${row["Produk"] || ''}</td>
+                    <td>${row["Harga Satuan"] || ''}</td>
+                    <td>${row["Jumlah Pesanan"] || ''}</td>
+                    <td>${row["Tipe Pembayaran"] || ''}</td>
+                    <td>${row["Tipe Pengiriman"] || ''}</td>
+                    <td>${row["Rating Produk"] || ''}</td>
+                    <td>${row["Harga Total"] || ''}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+
+        loadCSVData();
+    </script>
+</body>
+</html>

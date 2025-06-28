@@ -1,0 +1,529 @@
+/* Reset dan Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #fff9f9;
+    color: #333;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    padding: 1rem;
+    max-width: 80%;
+    margin: auto;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #c62828;
+    color: white;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #ffd54f;
+}
+
+/* NAVIGASI DESKTOP */
+.nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 0.3rem 0.3rem;
+    transition: background 0.3s;
+}
+
+.nav a:hover {
+    background:  #e2b31a;
+    border-radius: 5px;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #c62828;
+        flex-direction: column;
+        align-items: flex-start; 
+        display: none;
+        padding: 0 1rem;
+    }
+
+    .nav.show {
+        display: flex;
+    }
+
+    .nav a {
+        width: auto;
+        padding: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: left; 
+    }
+
+    .container {
+        width: 100%;
+    }
+}
+
+
+/* SECTION: HOME */
+.home-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.home-text {
+    flex: 1 1 400px;
+}
+
+.home-text h1 {
+    font-size: 2.5rem;
+    color: #c62828;
+    margin-bottom: 0.5rem;
+}
+
+.home-text h2 {
+    font-size: 1.8rem;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+.home-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.home-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-main, .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-main {
+    background-color: #c62828;
+    color: white;
+}
+
+.btn-main:hover {
+    background-color: #b71c1c;
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: #c62828;
+    border: 2px solid #c62828;
+}
+
+.btn-secondary:hover {
+    background-color: #fbe9e7;
+}
+
+/* IMAGE SECTION */
+.home-image {
+    flex: 1 1 300px;
+    text-align: center;
+}
+
+.home-image img {
+    max-width: 100%;
+    height: 400px;
+    animation: fadeIn 1s ease;
+}
+
+
+/* ANIMASI */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .home-section {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .home-buttons {
+        justify-content: center;
+    }
+
+    .home-image {
+        margin-top: 1rem;
+    }
+}
+
+/* PREDIKSI STYLE */
+.prediksi-container {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #c62828;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.08);
+}
+
+.prediksi-title {
+    text-align: center;
+    color: #fff; 
+    margin-bottom: 1.5rem;
+}
+
+.prediksi-title span {
+    color: #ffd54f;
+}
+
+.prediksi-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.prediksi-form label {
+    font-weight: bold;
+    display: block;
+    color: #fff; 
+    margin-bottom: 0.3rem;
+}
+
+.prediksi-form input,
+.prediksi-form textarea,
+.prediksi-form select {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.prediksi-form textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.btn-prediksi {
+    background-color:  rgb(21, 56, 252); 
+    color: #ffd54f;
+    font-weight: bolder;
+    width: 100%;
+    border: none;
+    margin-top: 20px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-prediksi:hover {
+    background-color: #a5a4a4;
+}
+
+.hasil-prediksi {
+    margin-top: 2rem;
+}
+
+.hasil-prediksi H3 {
+    color: #e2b31a;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.hasil-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.hasil-table th, .hasil-table td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.hasil-table th {
+    background: #f5f5f5;
+    color: #000000;
+    width: 30%;
+}
+
+.hasil-table td {
+    background: #f5f5f5;
+}
+
+/* Info Section */
+.info-section {
+    background-color: #f7f7f7;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    margin: 30px auto;
+}
+
+.info-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.info-cards-prediction {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1 1 30%;
+}
+
+.card-p {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1 1 40%;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.card ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.card li {
+    margin-bottom: 8px;
+}
+
+.card-p li {
+    margin-bottom: 8px;
+    margin-left: 30px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .prediksi-container {
+        padding: 1.5rem;
+        width: 100%;
+    }
+
+    .btn-prediksi {
+        width: 100%;
+    }
+    .info-title {
+        font-size: 1.8rem;
+    }
+    .info-section {
+        min-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .info-cards-prediction {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .card,
+    .card-p {
+        width: 100%;
+    }
+}
+
+
+/* INFROMASI MODEL STYLE */
+.informasi-model {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.informasi-model h2,
+.informasi-model h3 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.card-info-model {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.card-info-model h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card-info-model p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.card-info-model ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.card-info-model li {
+    margin-bottom: 8px;
+}
+
+/* TABEL Hasil K-Fold */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+table th,
+table td {
+    padding: 12px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+table th {
+    background-color: #e74c3c;
+    color: white;
+    text-align: center;
+}
+
+
+/* Average K-Fold - White background with black font */
+table td {
+    background-color: white;
+    color: black;
+    text-align: left;
+    border: 1px solid #000000;
+}
+
+/* Container CM dan ROC Curve sejajar di desktop, center di mobile */
+.confusion-roc-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* agar wrap di mobile */
+    margin-top: 30px;
+    text-align: center;
+}
+
+.confusion-roc-container img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table th, table td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .informasi-model h2 {
+        font-size: 1.6rem;
+    }
+
+    .card-info-model h3 {
+        font-size: 1.3rem;
+    }
+
+    /* For Confusion Matrix and ROC Curve */
+    .confusion-roc-container {
+        display: block;
+    }
+    .confusion-roc-container {
+        display: block;
+    }
+
+    .confusion-roc-container img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
