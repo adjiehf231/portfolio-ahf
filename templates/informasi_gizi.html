@@ -15,7 +15,7 @@
         margin: 0;
         padding: 0;
     }
-    overlay {
+    .overlay {
         background: rgba(209, 203, 203, 0.6);
         position: absolute;
         top: 0;
@@ -28,63 +28,63 @@
 </head>
 <body>
     <div class="container mt-5">
-    <!-- Hamburger Menu Button -->
-    <div class="hamburger" id="hamburger">&#9776;</div>
+        <!-- Hamburger Menu Button -->
+        <div class="hamburger" id="hamburger">&#9776;</div>
 
-    <!-- Navigation Links -->
-    <nav class="navigation" id="navLinks">
-        <a href="../index.html">Kembali Ke Portofolio</a>
-        <a href="index_gizi.html">Beranda</a>
-        <a href="prediksi_gizi.html">Prediksi Status Gizi Balita</a>
-        <a href="informasi_gizi.html">Informasi Model Random Forest</a>
-    </nav>
+        <!-- Navigation Links -->
+        <nav class="navigation" id="navLinks">
+            <a href="../index.html">Kembali Ke Portofolio</a>
+            <a href="index_gizi.html">Beranda</a>
+            <a href="prediksi_gizi.html">Prediksi Status Gizi Balita</a>
+            <a href="informasi_gizi.html">Informasi Model Random Forest</a>
+        </nav>
 
         <h1 class="text-center mt-4">📊 Informasi Analisis Data Model RANDOM FOREST</h1>
 
-
         <h2 class="mt-4">🔄 Transformasi Data</h2>
-        <table class="table table-hover table-bordered text-center">
-            <thead class="table-warning">
-                <tr>
-                    <th colspan="2">Gender & Status</th>
-                </tr>
-                <tr>
-                    <th>Sebelum</th>
-                    <th>Sesudah</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Laki-laki</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Perempuan</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Gizi Buruk</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Gizi Kurang</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Gizi Normal</td>
-                    <td>2</td>
-                </tr>                <tr>
-                    <td>Gizi Baik</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>Gizi Sangat</td>
-                    <td>1</td>
-                </tr>
-            </tbody>
-        </table>
-        
-
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered text-center">
+                <thead class="table-warning">
+                    <tr>
+                        <th colspan="2">Gender & Status</th>
+                    </tr>
+                    <tr>
+                        <th>Sebelum</th>
+                        <th>Sesudah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Laki-laki</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Perempuan</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Gizi Buruk</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Gizi Kurang</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Gizi Normal</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Gizi Baik</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Gizi Sangat</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <!-- Seleksi Fitur -->
         <h1 class="mt-4">⚙️ K-Fold Cross Validation & Confusion Matrix</h1>
@@ -92,41 +92,45 @@
         <!-- Hasil Evaluasi Model -->
         <h2 class="mt-4">📈 Hasil K-Fold Cross Validation</h2>
 
-        <table class="table table-hover table-bordered text-center" id="kfold">
-            <thead class="table-success">
-                <tr>
-                    <th>Fold</th>
-                    <th>Akurasi</th>
-                    <th>Presisi</th>
-                    <th>Recall</th>
-                    <th>F1-Score</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered text-center" id="kfold">
+                <thead class="table-success">
+                    <tr>
+                        <th>Fold</th>
+                        <th>Akurasi</th>
+                        <th>Presisi</th>
+                        <th>Recall</th>
+                        <th>F1-Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
 
         <h2 class="mt-4">🏆 Best Model dari K-Fold</h2>
-        <table class="table table-hover table-bordered text-center">
-            <thead class="table-danger">
-                <tr>
-                    <th>Iterasi (Fold)</th>
-                    <th>Akurasi</th>
-                    <th>Presisi</th>
-                    <th>Recall</th>
-                    <th>F1-Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <td>2</td>
-                <td>0.9843</td>
-                <td>0.9844</td>
-                <td>0.9844</td>
-                <td>0.9843</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered text-center">
+                <thead class="table-danger">
+                    <tr>
+                        <th>Iterasi (Fold)</th>
+                        <th>Akurasi</th>
+                        <th>Presisi</th>
+                        <th>Recall</th>
+                        <th>F1-Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2</td>
+                        <td>0.9843</td>
+                        <td>0.9844</td>
+                        <td>0.9844</td>
+                        <td>0.9843</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <!-- Confusion Matrix -->
         <h2 class="mt-4">🎯 Confusion Matrix</h2>
@@ -135,30 +139,33 @@
         </div>
 
         <h2 class="mt-4">📊 Agregasi K-Fold Cross Validation</h2>
-        <table class="table table-hover table-bordered text-center">
-            <thead class="table-info">
-                <tr>
-                    <th>Rata-rata Akurasi</th>
-                    <th>Rata-rata Presisi</th>
-                    <th>Rata-rata Recall</th>
-                    <th>Rata-rata F1-Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <td>0.9763</td>
-                <td>0.9766</td>
-                <td>0.9763</td>
-                <td>0.9761</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered text-center">
+                <thead class="table-info">
+                    <tr>
+                        <th>Rata-rata Akurasi</th>
+                        <th>Rata-rata Presisi</th>
+                        <th>Rata-rata Recall</th>
+                        <th>Rata-rata F1-Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0.9763</td>
+                        <td>0.9766</td>
+                        <td>0.9763</td>
+                        <td>0.9761</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-<script>
-document.getElementById('hamburger').addEventListener('click', function () {
-    var nav = document.getElementById('navLinks');
-    nav.classList.toggle('show');
-});
+
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function () {
+            var nav = document.getElementById('navLinks');
+            nav.classList.toggle('show');
+        });
 
         // Path to your CSV file
         const csvFilePath = '../static/data/hasil_kfold_gizi.csv'; // Adjust this path if your CSV is elsewhere
@@ -200,29 +207,29 @@ document.getElementById('hamburger').addEventListener('click', function () {
             return data;
         }
 
-function renderTable(data) {
-    const tableBody = document.querySelector('#kfold tbody'); // Pastikan ini ada
-    tableBody.innerHTML = ''; // Clear existing rows
+        function renderTable(data) {
+            const tableBody = document.querySelector('#kfold tbody'); // Pastikan ini ada
+            tableBody.innerHTML = ''; // Clear existing rows
 
-    if (data.length === 0) {
-        tableBody.innerHTML = '<tr><td colspan="10">Tidak ada data prediksi.</td></tr>';
-        return;
-    }
+            if (data.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="10">Tidak ada data prediksi.</td></tr>';
+                return;
+            }
 
-    data.forEach((row) => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-            <td>${row["Fold"]}</td>
-            <td>${row["Akurasi"] || ''}</td>
-            <td>${row["Presisi"] || ''}</td>
-            <td>${row["Recall"] || ''}</td>
-            <td>${row["F1-Score"] || ''}</td>
-        `;
-        tableBody.appendChild(tr);
-    });
-}
+            data.forEach((row) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${row["Fold"]}</td>
+                    <td>${row["Akurasi"] || ''}</td>
+                    <td>${row["Presisi"] || ''}</td>
+                    <td>${row["Recall"] || ''}</td>
+                    <td>${row["F1-Score"] || ''}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
 
-loadCSVData();
-</script>
+        loadCSVData();
+    </script>
 </body>
 </html>
