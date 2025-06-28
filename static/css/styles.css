@@ -526,7 +526,7 @@ img {
   }
   .skills__hard-skills,
   .skills__soft-skills {
-    grid-template-columns: repeat(3, 1fr); /* Ubah jadi 2 kolom di mobile */
+    grid-template-columns: repeat(2, 1fr); /* Ubah jadi 2 kolom di mobile */
   }
 
   .skills__hard-skills > .skills__subtitle,
@@ -573,7 +573,7 @@ img {
     display: grid;
     /* Default: 1 atau 2 kolom berdasarkan minmax pada layar yang lebih kecil */
     /* Ini akan membuat 1 kolom di layar sangat kecil dan 2 kolom di layar mobile/tablet menengah */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem; /* Jarak yang konsisten antar proyek */
 }
 
@@ -702,7 +702,7 @@ img {
 /* Tablet & Smaller Desktop (2 kolom) */
 @media screen and (max-width: 768px) {
     .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk tablet */
+        grid-template-columns: 1fr; /* 2 kolom untuk tablet */
     }
     .portfolio-item h3 {
         font-size: 0.8rem; /* Font judul sedikit lebih kecil untuk 2 kolom */
