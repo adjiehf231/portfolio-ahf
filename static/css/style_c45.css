@@ -233,16 +233,14 @@ select {
 .footer {
     background-color: #333;
     color: #fff;
-    margin-top: 20px;
     text-align: center;
     padding: 20px;
     font-size: 20px;
-    position: static;
-    bottom: 0;
     width: 100%;
+    margin-top: 20px;
+    position: relative; /* Agar footer berada di bawah */
 }
 
-/* Footer styling */
 .footer_dp {
     background-color: #333;
     color: #fff;
@@ -250,8 +248,7 @@ select {
     text-align: center;
     padding: 20px;
     font-size: 20px;
-    position: absolute;
-    bottom: 0;
+    position: relative; /* Agar footer berada di bawah */
     width: 100%;
 }
 
